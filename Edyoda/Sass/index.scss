@@ -1,0 +1,64 @@
+@import './resets';
+@import './variables';
+
+@function weight($weight-name)
+{
+    @return map-get($font-weights, $weight-name )
+}
+@mixin flexCenter($direction) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: $direction;
+}
+$temp1:  #272727;
+$temp2: 101;
+@mixin theme($light-theme) {
+    @if $temp2>$light-theme {
+        background: lighten($primary-color, 100%);
+        color: darken($text-color, 100%);
+    }
+}
+body
+{
+    background: $primary-color;
+    color: $text-color;
+}
+/* jfdd */
+.main
+{
+    @include flexCenter(row);
+    padding: 10px;
+    width: 80%;
+    margin: 0 auto;
+    #{&}__para
+    {
+        font-weight: weight(bold);
+    }
+}
+@function mul($x, $y)
+{
+    @return $x*$y;
+}
+.light
+{
+    @extend .main;
+    // @include theme(102);
+    font-size: mul(10px, 2);
+}
+$font-size: 12;
+@while $font-size <= 18 {
+ .font-size-#{$font-size} {
+ font-size: ($font-size * 1px);
+ }
+ $font-size: $font-size + 2;
+}
+%dark
+{
+    @extend .light;
+    padding: 100px;
+}
+.ajay
+{
+    @extend %dark;
+}

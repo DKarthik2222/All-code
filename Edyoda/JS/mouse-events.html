@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mouse Events</title>
+    <style>
+        body
+        {
+            text-align: center;
+        }
+        main
+        {
+            margin-top: 100px;
+            display: grid;
+            grid-template-columns: auto auto auto;
+        }
+        main div
+        {
+            width: auto;
+            height: 200px;
+            margin: 10px;
+            background-color: rgb(221, 153, 153);
+            border: 15px solid salmon;
+        }
+        h3
+        {
+            margin-top: 0;
+            padding: 15px;
+            background-color: lightblue;
+            border: 10px solid salmon;
+        }
+        p
+        {
+            padding-top: 30px;
+            font-size: 24px;
+            font-weight: 600;
+        }
+        button
+        {
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+    <button id="top-btn">Click Me!!</button>
+    <main>
+        <div id="over">
+            <h3>Mouseover event is triggered:</h3>
+            <p>0</p>
+        </div>
+        <div id="enter">
+            <h3>Mouseenter event triggered:</h3>
+            <p>0</p>
+        </div>
+        <div id="move">
+            <h3>Mousemove event triggered:</h3>
+            <p>0</p>
+        </div>
+    </main>
+    <script src="/mouse-events.js"></script>
+</body>
+</html>

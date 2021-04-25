@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Constructor Functions</title>
+</head>
+<body>
+    <script>
+        var person={
+            name : 'jack',
+            yearOfBirth : 1990,
+            job : 'Secret Agent'
+        }
+        console.log(person)
+        //Defining class using ES6(old process)
+        // class Person
+        // {
+        //     constructor(pName, pYearOfBirth, pJob){
+        //         this.name=pName;
+        //         this.yearOfBirth=pYearOfBirth;
+        //         this.job=pJob;
+
+        //         this.calculateAge=function(){
+        //             console.log(2020-this.yearOfBirth)
+        //         }
+        //     }
+        // }
+        //Defining class using Traditional Way
+        function Person(pName, pYearOfBirth, pJob)
+        {
+            this.name=pName;
+            this.yearOfBirth=pYearOfBirth;
+            this.job=pJob;
+        }
+
+        Person.prototype.calculateAge=function()
+        {
+            console.log('Age => '+this.name,2020-this.yearOfBirth)
+        }
+        Person.prototype.updateYearofBirth=function(birthYear)
+        {
+            this.yearOfBirth=birthYear
+        }
+        var karthik=new Person('Karthik', 1998, 'doctor')
+        console.log('age altering')
+        karthik.calculateAge();
+        karthik.updateYearofBirth(1996)
+        karthik.calculateAge();
+
+        Person.prototype.lastName="ramaswamy"
+
+        var john=new Person('John', 1992, 'Pilot')
+        console.log(john)
+        console.log(karthik.name+' '+karthik.lastName)
+    </script>
+</body>
+</html>

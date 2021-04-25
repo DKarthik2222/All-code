@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        document.write("This is Implicit Coercion"+"<br>")
+        var mStr="Hello"
+        var mNum=5
+        var mSum=mNum+mStr
+        document.write(mSum,typeof(mSum)+"<br>")
+        var mValue=+'2'
+        document.write(typeof(mValue)+"<br>")
+        var mValue2= 2>='2'
+        document.write(typeof(mValue2)+"<br>")
+        document.write("<br>")
+
+        document.write("This is explicit Coercion"+"<br>")
+        var mNum=15
+        document.write(typeof(String(mNum))+"<br>")
+        document.write(typeof(String(true))+"<br>")
+        document.write(typeof(String(-198.89))+"<br>")
+        document.write(typeof(String(null))+"<br>")
+        document.write(typeof(String(undefined))+"<br>")
+
+        document.write(typeof(Number('2'))+"<br>")
+        document.write(Number(true), typeof(Number(true))+"<br>")
+        document.write(Number(false), typeof(Number(false))+"<br>")
+        document.write(Number('apple'), typeof(Number('apple'))+"<br>")
+
+        document.write(Boolean(0), typeof(Boolean(0))+"<br>")
+        document.write(Boolean(1), typeof(Boolean(1))+"<br>")
+        document.write(Boolean('Apple'), typeof(Boolean('Apple'))+"<br>")
+        document.write(Boolean()+"<br>")
+        document.write(Boolean('')+"<br>")
+        document.write(Boolean(null)+"<br>")
+        document.write(Boolean(undefined)+"<br>")
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

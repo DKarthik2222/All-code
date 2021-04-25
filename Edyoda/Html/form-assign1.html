@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form-Register Page</title>
+    <style>
+        #form-makeup
+        {
+            border: 1px solid rgb(190, 187, 187);
+            width: 500px;
+            background-color: white;
+            padding-bottom: 24px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .image
+        {
+            width: 44px;
+            height: 44px;
+            padding: 14px;
+            /* margin-left: unset; */
+            /* margin-right: unset; */
+        }
+        .input
+        {
+            border-left: none;
+            border-top: none;
+            border-right: none;
+            border-bottom-color: rgb(216, 231, 228);
+            width: 100%;
+            height: 44px;
+            font-size: 18px;
+            outline: none;
+        }
+        .table
+        {
+            width: 100%;
+            /* overflow: hidden; */
+            background-color: rgb(245, 252, 243);
+            /* margin-left: auto; */
+            /* margin-right: auto; */
+            text-align: center;
+        }
+        #rb
+        {
+            background-color: rgb(58, 118, 207);
+            color: white;
+            height: 55px;
+            border: white; 
+            width: 200px;
+            text-align: center; 
+            font-size: 30px;
+        }
+        #rb:hover
+    {
+        background-color: blue;
+        color: white;
+    }
+    </style>
+</head>
+<body style="background-color: rgb(245, 252, 243);">
+    <form id="form-makeup">
+        <div>
+            <h1 style="text-align: center;">Register</h1>
+        </div>
+        <div>
+            <table class="table">
+                <tr>
+                    <td>
+                        <div>
+                            <a href="https://accounts.google.com/ServiceLogin" target="_blank">
+                                <img class="image" src="https://devstickers.com/assets/img/pro/yte2.png"
+                                alt="g-img"/></a>
+                        </div>
+                    </td>
+                    <td>
+                        <div>
+                            <a href="https://www.facebook.com/" target="_blank">
+                                <img class="image" src="https://cdn2.iconfinder.com/data/icons/social-media-2285/512/1_Facebook_colored_svg_copy-512.png"
+                                alt="f-img"/></a>
+                        </div>
+                    </td>
+                    <td>
+                        <div>
+                            <a href="https://github.com/login" target="_blank">
+                                <img class="image" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Octicons-mark-github.svg/600px-Octicons-mark-github.svg.png"
+                                alt="git-img"/></a>
+                        </div>
+                    </td>
+                    <td>
+                        <div>
+                            <a href="https://www.linkedin.com/login" target="_blank">
+                                <img class="image" src="https://cdn4.iconfinder.com/data/icons/social-messaging-ui-color-shapes-2-free/128/social-linkedin-circle-512.png"
+                                alt="in-img"/></a>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <br>
+        <div style="padding: 24px;">
+        <div>
+            <input class="input" type="text" name="username" placeholder="Username" required>
+        </div>
+        <br>
+        <div>
+            <input class="input" type="email" name="email" placeholder="Email" required>
+        </div>
+        <br>
+        <div>
+            <input class="input" type="password" name="password" placeholder="Password" required>
+        </div>
+        <br>
+        <div>
+            <input class="input" type="password" name="confirm-password" 
+            placeholder="Confirm Password" required>
+        </div>
+        <br>
+        <div style="text-align: center;">
+            <input type="submit" value="Register" id="rb">
+        </div>
+        </div>
+    </form>
+</body>
+</html>

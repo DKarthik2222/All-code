@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rest and Spread Operators</title>
+    <script>
+        //rest
+        const mSum1=(num1,num2, ...args)=>document.writeln(num2+num1)
+        const mSum2=(...args)=>{
+            let sum=0
+            for(let i=0; i<args.length; i++)
+            {
+                sum += args[i]
+            }
+            document.writeln(sum)
+        }
+        mSum2(1,2,3,4,5,6,7,8)
+
+        //spread
+        //arrays
+
+        // let mArr1=[1,2,3,4]
+        // let mArr2=mArr1
+        // mArr1.push(6)
+        // document.writeln(mArr1)
+        // document.writeln(mArr2)
+        let mArr1=[1,2,3,4]
+        let mArr2=[...mArr1]
+        mArr1.push(6)
+        document.writeln(mArr1)
+        document.writeln(mArr2)
+        // let mArr3=mArr1.concat(mArr2)
+        let mArr3=[...mArr1, ...mArr2]
+        document.writeln(mArr3)
+
+        //objects
+        let mObj1={
+            name:'Jack',
+            latName:'Sparrow'
+        }
+        let mObj2={
+            age:28
+        }
+        let mObj3={...mObj1, ...mObj2}
+        document.writeln(mObj3)
+        console.log(mObj3)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

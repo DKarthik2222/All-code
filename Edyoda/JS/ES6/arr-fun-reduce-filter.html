@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reduce() & Filter()</title>
+    <script>
+        //reduce
+        const mArr=[
+            {
+                name:'kk',
+                exp:2,
+                age:23
+            },
+            {
+                name:'dk',
+                exp:1,
+                age:22
+            }        
+        ]
+        const result=mArr.reduce((acc, item)=>{
+            // console.log(item.age)
+            console.log(acc)
+            return acc+item.age
+        },0)
+        console.log(result)
+        //filter
+        const numArr=[1,2,3,4,5,6,7,8]
+        const resultArr=numArr.filter(item=>{
+            // console.log(item)
+            // return true
+            return item%2!=0
+        })
+        console.log('Result Arr => ', resultArr)
+        const resultArr2=mArr.filter( item =>
+        {
+            // console.log(item)
+            // return true
+            return item.exp >= 2;
+        })
+        console.log('Result Arr => ', resultArr2)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

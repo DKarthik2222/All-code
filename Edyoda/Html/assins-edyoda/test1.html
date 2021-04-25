@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment1</title>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;900&family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/89ce51601c.js" crossorigin="anonymous"></script>
+    <style>
+        header
+        {
+            background-color: #fff;
+            padding: 16px 78px;
+        }
+        #stories
+        {
+            margin: 0;
+            font-weight: 500;
+            font-style: italic;
+            font-family: 'Raleway', sans-serif;
+        }
+        #drop-down
+        {
+            color: #000;
+            padding-left: 60px;
+        }
+        #drop-down-logo
+        {
+            width: 15px;
+            padding-left: 8px;
+        }
+        .h-item
+        {
+            display: inline;
+        }
+        #logo
+        {
+            width: 130px;
+            font-size: 32px;
+            color: #0084ff;
+            font-weight: 900;
+        }
+        body
+        {
+            margin: 0;
+            background-color: rgb(231, 241, 241);
+            font-family: 'Raleway', sans-serif;
+        }
+        main
+        {
+            margin-left: 20%;
+            margin-right: 20%;
+        }
+        #filter-text
+        {
+            font-size: 13px;
+            font-weight: 600;
+            margin-left: 8px;
+        }
+        #filter-logo
+        {
+            color: #0084ff;
+            padding-right: 5px;
+        }
+        #heading
+        {
+            margin-bottom: 20px;
+            font-size: 24px;
+            padding-top: 16px;
+            font-weight: 600;
+        }
+        #categories p
+        {
+            padding: 6px 14px;
+            width: auto;
+            color: #0084ff;
+            border-radius: 15px;
+            border: 1px solid #0084ff;
+            margin: 5px;
+            cursor: pointer;
+            display: inline-block;
+        }
+        #categories p:first-of-type
+        {
+            background-color: #0084ff;
+            color: white;
+        }
+        #img-wrapper img
+        {
+            width: 100%;
+            height: 176px;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+        }
+        #img-wrapper div h3
+        {
+            height: 30px;
+            width: 90%;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            font-weight: 600;
+        }
+        #img-wrapper div h3, #img-wrapper div p
+        {
+            padding-left: 20px;
+        }
+        #img-wrapper div p:last-of-type
+        {
+            height: 130px;
+            width: 90%;
+            white-space: normal;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .wrap-items
+        {
+            width: calc(33% - 16px);
+            margin: 8px;
+            display: inline-block;
+            vertical-align: top;
+            font-size: 18px;
+            box-shadow: 0px 0px 5px 0.1px gray;
+            border-radius: 8px;
+            background-color: #fff;
+        }
+        .author
+        {
+            color: #0079cf;
+            font-size: 16px;
+            padding-right: 4px;
+        }
+        .date
+        {
+            font-weight: 600;
+            font-size: 14px;
+            padding-left: 4px;
+            font-family: 'Roboto', sans-serif;
+        }
+        .text
+        {
+            padding: 10px 24px;
+        }
+        footer
+        {
+            background-color: #172146;
+            margin-top: 40px;
+            padding: 40px 16%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 id="logo" class="h-item">EDYODA</h1>
+        <p id="drop-down" class="h-item"><span>Explore Categories</span><span><img id="drop-down-logo" src="https://cdn1.iconfinder.com/data/icons/arrows-vol-1-5/24/dropdown_arrow2-512.png" alt="dro-down"/></span></p>
+        <p id="stories">Stories</p>
+    </header>
+    <main>
+        <h1 id="heading">Trending Posts</h1>
+        <p id="filter-text"><i id="filter-logo" class="fa fa-filter" aria-hidden="true"></i>Filter by Category</p>
+        <div id="categories">
+            <p>All</p>
+            <p>Artificial Intelligence</p>
+            <p>Cloud Computing</p>
+            <p>DevOps</p>
+            <p>Programming Languages</p>
+            <p>Mobile Application Development</p>
+            <p>Technology and Tools</p>
+            <p>Get a Job in a Tech Company</p>
+            <p>Others</p>
+        </div>
+        <div id="img-wrapper">
+            <div class="wrap-items">
+                <img src="https://edyoda.s3.amazonaws.com/media/blog-images/learn_machine_learning_courses_online.png" alt="m1"/>
+                <h3>Introduction To A Machine Learning Online Course</h3>
+                <p>
+                    <span class="author">EdYoda</span>|<span class="date">31 jul 2020</span>
+                </p>
+                <p class="text">We have had an insight into Artificial Intelligence. Well, one of its subfields is machine learning and this introduction will help you get a fair idea of what this</p>
+            </div>
+            <div class="wrap-items">
+                <img src="https://edyoda.s3.amazonaws.com/media/blog-images/6.png" alt="m2"/>
+                <h3>LAMP Stack Vs MEAN s</h3>
+                <p>
+                    <span class="author">EdYoda</span>|<span class="date">31 jul 2020</span>
+                </p>
+                <p class="text">In today’s dynamic world, developing a rapid application with a smooth user interface that can adapt to specific features is the main business requirement.</p>
+            </div>
+            <div class="wrap-items">
+                <img src="https://edyoda.s3.amazonaws.com/media/blog-images/4.png" alt="m3"/>
+                <h3>Impact of Cloud Comp</h3>
+                <p>
+                    <span class="author">EdYoda</span>|<span class="date">31 jul 2020</span>
+                </p>
+                <p class="text">Cloud computing has been rapidly gaining pace in the world of information technology. It has been observed that over 90% of global enterprises are using clou</p>
+            </div>
+            <div class="wrap-items">
+                <img src="https://edyoda.s3.amazonaws.com/media/blog-images/3.png" alt="m4"/>
+                <h3>Challenges of Machine</h3>
+                <p>
+                    <span class="author">EdYoda</span>|<span class="date">31 jul 2020</span>
+                </p>
+                <p class="text">Machine Learning is a subset of artificial intelligence which is an important part of computer science. The revolution of Big Data promises to transform the</p>
+            </div>
+            <div class="wrap-items">
+                <img src="https://edyoda.s3.amazonaws.com/media/blog-images/5.png" alt="m5"/>
+                <h3>Breaking the Myths around Cybersecurity</h3>
+                <p>
+                    <span class="author">EdYoda</span>|<span class="date">31 jul 2020</span>
+                </p>
+                <p class="text">Cybersecurity plays an integral role in the process of good business models. But even cybersecurity programs built with good intentions can fall short in</p>
+            </div>
+            <div class="wrap-items">
+                <img src="https://edyoda.s3.amazonaws.com/media/blog-images/7.png" alt="m6"/>
+                <h3>Importance of Data Ba</h3>
+                <p>
+                    <span class="author">EdYoda</span>|<span class="date">31 jul 2020</span>
+                </p>
+                <p class="text">A business must always introspect the areas where they lack in order to bring about a positive change in the work environment. One of the main precautions or a</p>
+            </div>
+            <div class="wrap-items">
+                <img src="https://edyoda.s3.amazonaws.com/media/blog-images/automation-testing-an-overview-2.png" alt="m7"/>
+                <h3>What is Web Scraping?</h3>
+                <p>
+                    <span class="author">EdYoda</span>|<span class="date">31 jul 2020</span>
+                </p>
+                <p class="text">Simply put, web scraping is one of the tools developers use to gather and analyze information from the internet. Some websites and platforms offer application</p>
+            </div>
+            <div class="wrap-items">
+                <img src="https://edyoda.s3.amazonaws.com/media/blog-images/what_is_isa_blog_1.png" alt="m8"/>
+                <h3>What is Income Share Agreement?</h3>
+                <p>
+                    <span class="author">EdYoda</span>|<span class="date">31 jul 2020</span>
+                </p>
+                <p class="text">The term Income Share Agreement has been around for a long time since 1955 to be precise. Surprised, eh? It was first introduced by Milton Friedman, a</p>
+            </div>
+            <div class="wrap-items">
+                <img src="https://edyoda.s3.amazonaws.com/media/blog-images/practical_machine_learning_1.png" alt="m9"/>
+                <h3>Practical Machine Learning</h3>
+                <p>
+                    <span class="author">EdYoda</span>|<span class="date">31 jul 2020</span>
+                </p>
+                <p class="text">Machine learning is a field of artificial intelligence that uses statistical techniques to give computer systems the ability to “learn” (e.g., progressively improv</p>
+            </div>
+        </div>
+    </main>
+    <footer>
+
+    </footer>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Element Styles</title>
+    <style>
+        body{
+            margin: 0;
+        }
+        header > div
+        {
+            width: 100%;
+            height: 100vh;
+            box-sizing: border-box;
+            overflow: hidden;
+            /* position: relative; */
+            background-color: lightblue;
+            text-align: center;
+        }
+        button
+        {
+            font-size: 24px;
+            margin-right: 24px;
+        }
+        h1
+        {
+            font-size: 34px;
+            position: relative;
+            top: 50%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div>
+            <h1 id="main-heading" class="small">Fetch Styles</h1>
+            <button id="btn-decrease">Font -</button>
+            <button id="btn-increase" style="margin-right: 0;">Font +</button>
+        </div>
+    </header>
+    <script src="/get-elem-styles.js"></script>
+</body>
+</html>

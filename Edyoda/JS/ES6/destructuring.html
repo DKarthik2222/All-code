@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destructuring</title>
+    <script>
+        console.clear();
+        //arrays
+        const name='karthik dulam natarajan'
+        const nameArr=name.split(' ')
+
+        console.log(nameArr)
+        // let fn=nameArr[0]
+        // let ln=nameArr[1]
+        let [fn, , ln]=nameArr
+
+        console.log(fn)
+        // console.log(mn)
+        console.log(ln)
+
+        //objects
+        // const person={
+        //     firstName:'Karthik',
+        //     middleName:'Dulam',
+        //     lastName:'Natarajan',
+        //     age:22
+        // }
+        // let {middleName, firstName}=person;
+        // console.log(firstName)
+        // console.log(middleName)
+        let firstName='Karthik'
+        let middleName='Dulam'
+        let lastName='Natarajan'
+        //if objs has same key as var name
+        const personObj={
+            firstName,
+            lastName,
+            middleName
+        }
+        console.log(personObj)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

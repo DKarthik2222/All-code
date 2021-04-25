@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects World!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Montserrat:wght@500&display=swap" rel="stylesheet">
+    <style>
+        body
+        {
+            margin: 0;
+            background-image: url('https://sb.ecobnb.net/app/uploads/sites/3/2018/04/paul-trienekens-419330-unsplash.jpg');
+            background-size: cover;
+            text-align: center;
+            overflow: hidden;
+            margin: 0 15%;
+        }
+        h1
+        {
+            font-family: 'Fredoka One', cursive;
+            font-size: 30px;
+            padding-top: 100px;
+            position: absolute;
+            left: 40%;
+            animation: 2s infinite ease-in-out rotate;
+        }
+        @keyframes rotate
+        {
+            0%
+            {
+                transform: scale(0);
+            }
+            100%
+            {
+                transform: scale(1.5);
+            }
+        }
+        div
+        {
+            width: 150px;
+            height: 150px;
+            background-color: white;
+            border-radius: 50%;
+            /* display: flex; */
+            /* justify-content: center;
+            align-items: center; */
+            cursor: pointer;
+            margin-bottom: 10vh;
+            background-image: url('/ball.png');
+            background-size: cover;
+            opacity: 0.7;
+            z-index: 9;
+        }
+        p
+        {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 30px;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+        i
+        {
+            color: white;
+        }
+        section
+        {
+            display: flex;
+        }
+        @keyframes movehtml
+        {
+            0%
+            {
+                transform: translate();
+            }
+            100%
+            {
+                transform: translate(0, -300%);
+                box-shadow: 10px 10px 5px #aaaaaa;
+            }
+        }
+        @keyframes movecss
+        {
+            0%
+            {
+                transform: translate();
+            }
+            100%
+            {
+                transform: translate(0, -300%);
+            }
+        }
+        @keyframes movejs
+        {
+            0%
+            {
+                transform: translate();
+            }
+            100%
+            {
+                transform: translate(0, -300%);
+            }
+        }
+        #aside
+        {
+            height: 100vh;
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-end;
+        }
+        #html
+        {
+            animation: alternate infinite movejs 1.5s;
+        }
+        #css
+        {
+            animation: alternate infinite movejs 1s;
+        }
+        #js
+        {
+            animation: alternate infinite movejs 1.7s;
+        }
+        h3
+        {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            font-size: 24px;
+            transform: translate(-50%, -50%);
+            display: none;
+        }
+        @media screen and (max-width: 800px) {
+            aside, div, h1
+            {
+                display: none;
+            }
+            h3
+            {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Edyoda Projects!!</h1>
+    <h3>Please open windows/Desktop mode</h3>
+    <aside id="aside">
+        <div id="html">
+            <p>HTML Project</p>
+            <i>click me</i>
+        </div>
+        <div id="css">
+            <p>CSS Project</p>
+            <i>click me</i>
+        </div>
+        <div id="js">
+            <p>JS Project</p>
+            <i>click me</i>
+        </div>
+    </aside>
+    <script>
+        var page1=document.getElementById('html')
+        page1.onclick=function()
+        {
+            location.href=("/htmlProject/main-project.html")
+        }
+        var page2=document.getElementById('css')
+        page2.onclick=function()
+        {
+            location.href=("/cssProject/cssProject.html")
+        }
+        var page3=document.getElementById('js')
+        page3.onclick=function()
+        {
+            location.href=("/jsProject/final-js-project.html")
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Rocket</title>
+    <style>
+        body
+        {
+            margin: 0;
+            background-image: url('https://cdn.pixabay.com/photo/2015/10/31/20/01/sky-1016162_960_720.jpg');
+            display: flex;
+            background-size: 100vw 100vh;
+        }
+        #rocket
+        {
+            width: 200px;
+            height: 300px;
+            position: absolute;
+            bottom: 24px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: fly 2s ease-in  infinite;
+        }
+        @keyframes fly
+        {
+            0%
+            {
+                transform: translate(-50%,30vh);
+            }
+            100%
+            {
+                transform: translate(-50%,-100vh);
+            }
+        }
+        #ball
+        {
+            width: 150px;
+            height: 150px;
+            position: absolute;
+            bottom: 24px;
+            left: 10%;
+            transform: translateX(-10%);
+            animation: bounce 0.5s ease-out alternate infinite;
+        }
+        @keyframes bounce
+        {
+            0%
+            {
+                transform: translate(-10%,0);
+            }
+            100%
+            {
+                transform: translate(-10%,-80vh);
+            }
+        }
+    </style>
+</head>
+<body>
+    <img id="rocket" src="https://www.freepnglogos.com/uploads/rocket-png/features-marketing-rocket-sales-and-marketing-6.png" alt="rocket">
+    <img id="ball" src="https://www.freepnglogos.com/uploads/basketball-png/basketball-open-letter-3.png" alt="ball">
+</body>
+</html>

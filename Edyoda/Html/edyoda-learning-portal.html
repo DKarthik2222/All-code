@@ -1,0 +1,1186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning Portal</title>
+    <script src="https://kit.fontawesome.com/89ce51601c.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* header */
+        .input-wrapper{
+                position: relative;
+                width: 320px;
+            }
+            .search-box{
+                width: 300px;
+                padding: 9px  24px;
+                font-size: 14px;
+                outline: none;
+                border: 1px solid rgb(170, 169, 169);
+                border-radius: 24px;
+            }
+            #search-icon{
+                position:absolute;
+                top: 6px;
+                color: rgba(87, 87, 87, 0.6);
+                right: 0;
+                font-size: 24px;
+                cursor: pointer;
+            }
+            .z-icon img{
+                width: 33px;
+                margin-left: 20px;
+                margin-right: 30px;
+                margin-top: 10px;
+                cursor: pointer;
+            }
+            .bell-icon img{
+                width: 33px;
+                margin-right: 10px;
+                margin-left: 50px;
+                margin-top: 10px;
+                cursor: pointer;
+            }
+            .avatar-png img{
+                width: 50px;
+                border-radius: 50%;
+                margin-right: 80px;
+                cursor: pointer;
+            }
+            header
+            {
+                display: flex;
+                background-color: white;
+                height: 75px;
+                font-family: 'Raleway', sans-serif;
+            }
+            header > div
+            {
+                display: flex;
+            }
+            header > div:last-of-type
+            {
+                position: absolute;
+                right: 0;
+                top: 10px;
+            }
+            header div p
+            {
+                margin: 10px;
+                margin-left: 40px;
+                cursor: pointer;
+                font-weight: 600;
+                color: rgb(95, 95, 95);
+            }
+            .fa-chevron-down
+            {
+                padding-left: 10px;
+            }
+            header div:first-of-type
+            {
+                margin-top: 10px;
+                margin-left: 90px;
+            }
+            .edyoda {
+                font-size: 40px;
+                margin-top: 0;
+                -webkit-font-smoothing: antialiased;
+                font-family: 'Raleway', sans-serif;
+                font-weight: 900;
+            }
+            .ed-logo {
+                background-image: -webkit-linear-gradient(181deg,#0048ff,#0096ff),-webkit-linear-gradient(#000,#000);
+                background-image: -o-linear-gradient(181deg,#0048ff,#0096ff),-o-linear-gradient(#000,#000);
+                background-image: linear-gradient(269deg,#0048ff,#0096ff),linear-gradient(#000,#000);
+                color: #0084ff;
+                -webkit-background-clip: text;
+                background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+            @media(max-width: 1350px)
+            {
+                .input-wrapper
+                {
+                    display: none;
+                }
+            }
+            @media(max-width: 1000px)
+            {
+                header > div:first-of-type p
+                {
+                    display: none;
+                }
+            }
+            #topbar2 img
+            {
+                width: 20px;
+            }
+            #topbar2 >div:last-of-type > div
+            {
+                border: 0.5px solid gray;
+                margin: 10px;
+                padding: 10px 15px;
+                border-radius: 6px;
+                cursor: pointer;
+            }
+            @media(max-width: 700px)
+            {
+                #topbar2 >div:last-of-type > div
+                {
+                    display: none;
+                }
+            }
+            #topbar2 >div:last-of-type > div p
+            {
+                display: inline-block;
+                margin: 0;
+                transform: translateY(-2px);
+                margin-left: 4px;
+            }
+            #topbar2 >div:last-of-type > div:last-of-type
+            {
+                padding-top: 8px;
+            }
+            #topbar2
+            {
+                background-color: #15294b;
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                color: white;
+                font-family: 'Raleway', sans-serif;
+                font-weight: 600;
+                font-size: 14px;
+            }
+            #topbar2 > div:last-of-type
+            {
+                display: flex;
+                justify-content: space-around;
+            }
+            /* main */
+            /* videos section */
+            body
+            {
+                margin: 0;
+                background: #f0f8ff;
+                font-family: 'Roboto', sans-serif;
+            }
+            main
+            {
+                float: right;
+                margin-top: 40vh;
+                box-sizing: border-box;
+                margin-right: 14vw;
+            }
+
+            main input
+            {
+                display: none;
+            }
+            /* display the (large image container) anchor elem when it is the target */
+            iframe
+            {
+                width: 50vw;
+                height: 80vh;
+                box-sizing: border-box;
+                display: none;
+            }
+            label
+            {
+                cursor: pointer;
+                font-size: 15px;
+                letter-spacing: -0.1px;
+                font-family: 'Raleway', sans-serif;
+                font-weight: 500;
+            }
+            #description
+                {
+                    width: 50%;
+                    position: absolute;
+                    top: 19%;
+                    left: 16%;
+                }
+            #d1
+            {
+                display: block;
+                position: absolute;
+                left: 16%;
+                top: 45vh;
+            }
+            #r1:checked ~ #d1 { 
+                display: block;
+                position: absolute;
+                left: 16%;
+                top: 45vh;
+                        }
+            #r2:checked ~ #d2 { 
+                display: block;
+                position: absolute;
+                left: 16%;
+                top: 45vh;
+                        }
+            #r3:checked ~ #d3 { 
+                display: block;
+                position: absolute;
+                left: 16%;
+                top: 45vh;
+                        }
+            #r4:checked ~ #d4 { 
+                display: block;
+                position: absolute;
+                left: 16%;
+                top: 45vh;
+                        }
+            #r5:checked ~ #d5 { 
+                display: block;
+                position: absolute;
+                left: 16%;
+                top: 45vh;
+                        }
+            #r6:checked ~ #d6 { 
+                display: block;
+                position: absolute;
+                left: 16%;
+                top: 45vh;
+                        }
+            #r7:checked ~ #d7 { 
+                display: block;
+                position: absolute;
+                left: 16%;
+                top: 45vh;
+                        }
+            #r8:checked ~ #d8 { 
+                display: block;
+                position: absolute;
+                left: 16%;
+                top: 45vh;
+                    }   
+            #r9:checked ~ #d9 { 
+                display: block;
+                position: absolute;
+                left: 16%;
+                top: 45vh;
+                    } 
+            #r10:checked ~ #d10 { 
+                display: block;
+                position: absolute;
+                left: 16%;
+                top: 45vh;
+                    } 
+
+            #videos
+            {
+                width: 18vw;
+                height: 45vh;
+                overflow: auto;
+            }
+            @media(max-width: 900px)
+            {
+                main
+                {
+                    float: none;
+                    display: flex;
+                    margin-top: 85vh;
+                    justify-content: center;
+                    margin-left: auto;
+                    margin-right: auto;
+                }
+                #d1
+                {
+                    left: 50%;
+                    transform: translateX(-50%);
+                    top: 37vh;
+                }
+                #r1:checked ~ #d1 { 
+                    left: 50%;
+                    transform: translateX(-50%);
+                    top: 37vh;
+                        }
+                #r2:checked ~ #d2 { 
+                        left: 50%;
+                        transform: translateX(-50%);
+                        top: 37vh;
+                            }
+                #r3:checked ~ #d3 { 
+                        left: 50%;
+                        transform: translateX(-50%);
+                        top: 37vh;
+                            }
+                #r4:checked ~ #d4 { 
+                        left: 50%;
+                        transform: translateX(-50%);
+                        top: 37vh;
+                            }
+                #r5:checked ~ #d5 { 
+                        left: 50%;
+                        transform: translateX(-50%);
+                        top: 37vh;
+                            }
+                #r6:checked ~ #d6 { 
+                        left: 50%;
+                        transform: translateX(-50%);
+                        top: 37vh;
+                            }
+                #r7:checked ~ #d7 { 
+                        left: 50%;
+                        transform: translateX(-50%);
+                        top: 37vh;
+                            }
+                #r8:checked ~ #d8 { 
+                        left: 50%;
+                        transform: translateX(-50%);
+                        top: 37vh;
+                        }   
+                #r9:checked ~ #d9 { 
+                        left: 50%;
+                        transform: translateX(-50%);
+                        top: 37vh;
+                        } 
+                #r10:checked ~ #d10 { 
+                        left: 50%;
+                        transform: translateX(-50%);
+                        top: 37vh;
+                        } 
+                #videos
+                {
+                    width: 60vw;
+                    overflow: auto;
+                }
+                #duplicate
+                {
+                    display: none;
+                }
+            }
+            ::-webkit-scrollbar {
+                margin-top: 10px;
+                width: 5px;
+            }
+
+            /* Track */
+            ::-webkit-scrollbar-track {
+                background: #f0f8ff; 
+            }
+            
+            /* Handle */
+            ::-webkit-scrollbar-thumb {
+                background: #ddebf8;
+            }
+
+            /* Handle on hover */
+            ::-webkit-scrollbar-thumb:hover {
+                background: #c8e4fd;
+            }
+            main input[type=checkbox]:checked
+            {
+                display: none;
+            }
+
+            .v-lines
+            {
+                border: 1.5px solid black;
+            }
+            #vid-logos
+            {
+                display: flex;
+            }
+            #vid-logos img
+            {
+                width: 40px;
+            }
+            #vid-logos p:last-of-type
+            {
+                margin: 0;
+                font-size: 11px;
+                text-align: right;
+                font-weight: 400;
+            }
+            #vid-logos div:first-of-type p
+            {
+                margin-left: 10px;
+            }
+            #vid-logos div:last-of-type p
+            {
+                margin-left:10px;
+            }
+            #vid-logos div:last-of-type p:last-of-type
+            {
+                padding-left: 0;
+            }
+            .vid-items
+            {
+                display: inline;
+                font-size: 25px;
+                transform: translatey(20px);
+            }
+            .fa-play
+            {
+                color: rgb(50, 135, 245);
+                margin-right: 10px;
+            }
+            .video-p:hover .fa-play
+            {
+                color: black;
+            }
+            .video-p:hover
+            {
+                color: rgb(50, 135, 245);
+            }
+            .video-p
+            {
+                display: flex;
+                justify-content: space-between;
+                margin-top: 15px;
+                margin-bottom: 15px;
+            }
+            section
+            {
+                box-sizing: border-box;
+            }
+            .duration, .vid-nums
+            {
+                font-family: Arial, Helvetica, sans-serif;
+                margin-right: 10px;
+            }
+            #duplicate
+            {
+                height: 100vh;
+            }
+            /* author desc */
+            #author-desc
+            {
+                width: 50%;
+                transform: translateX(32%);
+            }
+            #author-desc > div:first-of-type
+            {
+                display: flex;
+                justify-content: space-between;
+            }
+            #author-desc > div:first-of-type > div
+            {
+                display: flex;
+            }
+            #author-desc > div:first-of-type > div:first-of-type > div
+            {
+                border: 0.5px solid gray;
+                margin: 10px;
+                padding: 0px 15px;
+                border-radius: 6px;
+                cursor: pointer;   
+            }
+            #author-desc > div:first-of-type > div:first-of-type > div img
+            {
+                width: 20px;
+                transform: translateY(5px);
+            }
+            #author-desc > div:first-of-type > div:first-of-type > div:last-of-type img
+            {
+                transform: translateY(0px);
+            }
+            #author-desc > div:first-of-type > div:last-of-type
+            {
+                height: 40px;
+                transform: translateY(5px);
+                cursor: pointer;
+            }
+            #author-desc > div:first-of-type > div:first-of-type > div p
+            {
+                display: inline-block;
+                margin-left: 10px;
+            }
+            #author-desc > div:nth-of-type(2)
+            {
+                display: flex;
+            }
+            #author-desc > div:nth-of-type(2) h3
+            {
+                margin: 0 10px;
+                font-size: 13px;
+                margin-bottom: 20px;
+            }
+            #author-desc > div:nth-of-type(3)
+            {
+                display: flex;
+                justify-content: space-between;
+            }
+            #author-desc > div:nth-of-type(3) > div:first-of-type
+            {
+                display: flex;
+            }
+            #author-desc > div:nth-of-type(3) > div:first-of-type img
+            {
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+            }
+            #author-desc > div:nth-of-type(3) > div:first-of-type p
+            {
+                margin-left: 10px;
+                font-size: 20px;
+                font-weight: 500;
+                color: #0096ff;
+            }
+            #author-desc > div:nth-of-type(3) > div:last-of-type
+            {
+                border: 0.5px solid gray;
+                margin: 10px;
+                padding: 0px 15px;
+                border-radius: 6px;
+                cursor: pointer;
+            }
+            #author-desc > div:nth-of-type(3) > div:last-of-type p
+            {
+                display: inline-block;
+            }
+            #author-desc > div:nth-of-type(4)
+            {
+                display: flex;
+            }
+            #author-desc > div:nth-of-type(4) h3
+            {
+                margin-bottom: 0;
+                margin-right: 10px;
+                color: rgb(105, 105, 105);
+            }
+            #author-desc > div:nth-of-type(4) h3:first-of-type
+            {
+                color: black;
+                border-bottom: 3px solid black;
+                padding-bottom: 3px;
+            }
+            #author-desc hr
+            {
+                margin-top: 0;
+            }
+            #author-desc input
+            {
+                width: 100%;
+                padding: 20px 10px;
+                border-radius: 6px;
+                outline: none;
+                border: 0.1px solid rgb(224, 224, 224)
+            }
+            #author-desc > div:nth-of-type(5)
+            {
+                position: relative;
+            }
+            .fa-chevron-circle-right
+            {
+                font-size: 24px;
+                position: absolute;
+                top: 15px;
+                right: 0;
+                color: #0096ff;
+            }
+            .author-p
+            {
+                color: rgb(128, 128, 128);
+                font-size: 14px;
+            }
+            /* Reviews Section */
+            #reviews, #courses
+            {
+                width: 70vw;
+                margin: auto;
+            }
+            #reviews img
+            {
+                width: 8vw;
+                border-radius: 50%;
+                margin-right: 20px;
+            }
+            #reviews > div
+            {
+                /* display: flex; */
+                margin-top: 20px;
+            }
+            #reviews h3
+            {
+                color: #0096ff;
+            }
+            .review-name
+            {
+                display: inline;
+                margin: 5px;
+            }
+            #reviews > div > div
+            {
+                width: 70%;
+                margin-top: 20px;
+                display: inline-block;
+                transform: translate(10px, -30px);
+            }
+            @media(max-width: 1000px)
+            {
+                #reviews > div > div
+                {
+                    transform: translate(10px, -10px);
+                }
+            }
+            @media(max-width: 700px)
+            {
+                #reviews > div > div
+                {
+                    transform: translate(10px, 0px);
+                }
+            }
+            #reviews > div:last-of-type
+            {
+                display: block;
+                text-align: center;
+                background-color: rgb(217, 242, 255);
+                border-radius: 2px;
+            }
+            #reviews > div:last-of-type > h2
+            {
+                color: #0096ff;
+                font-size: 16px;
+                cursor: pointer;
+            }
+            /* courses */
+            #courses > div:first-of-type
+            {
+                display: flex;
+                justify-content: space-between;
+            }
+            #courses > div h1,  #courses > div h3
+            {
+                margin-bottom: 0;
+            }
+            #courses > div h3
+            {
+                color: #0096ff;
+            }
+            #courses > aside
+            {
+                margin: 50px 0;
+                display: flex;
+                justify-content: space-around;
+            }
+            #courses > aside h4
+            {
+                color: #0096ff;
+            }
+            .author-img
+            {
+                width: 40px;
+                border-radius: 50%;
+            }
+            #courses > aside > div
+            {
+                width: 22%;
+                position: relative;
+                height: 350px;
+                border-radius: 6px;
+                padding: 0 10px;
+                border: 0.5px solid gray;
+            }
+            @media(max-width: 1350px)
+            {
+                #courses > aside
+                {
+                    flex-wrap: wrap;
+                }
+                #courses > aside > div
+                {
+                    width: 30%;
+                    margin-bottom: 10px;
+                }
+            }
+            @media(max-width: 1000px)
+            {
+                #courses > aside > div
+                {
+                    width: 45%;
+                }
+            }
+            @media(max-width: 700px)
+            {
+                #courses > aside > div
+                {
+                    width: 70%;
+                }
+            }
+            #courses > aside > div > div:nth-of-type(2) img, #courses > aside > div > div:nth-of-type(2) h4
+            {
+                display: inline-block;
+            }
+            #courses > aside > div > div:nth-of-type(2) h4
+            {
+                transform: translate(10px, -15px);
+            }
+            #courses > aside > div > div:nth-of-type(1)
+            {
+                width: 50%;
+                margin-left: 10px;
+                border-bottom-left-radius: 6px;
+                border-bottom-right-radius: 6px;
+                padding: 10px;
+                background-color: #0096ff;
+            }
+            #courses > aside > div:first-of-type > div:nth-of-type(1)
+            {
+                background-color: rgb(168, 102, 255);
+            }
+            #courses > aside > div > div:nth-of-type(1) p
+            {
+                margin: 0;
+                text-align: center;
+                color: white;
+            }
+            .card-logos > div
+            {
+                display: inline-block;
+            }
+            .card-logos img
+            {
+                width: 40px;
+            }
+            .card-logos p:last-of-type
+            {
+                margin: 0;
+                font-size: 11px;
+                text-align: right;
+                font-weight: 400;
+            }
+            .card-logos div:first-of-type p
+            {
+                margin-left: 10px;
+            }
+            .card-logos div:last-of-type p
+            {
+                margin-left:10px;
+            }
+            .card-logos div:last-of-type p:last-of-type
+            {
+                padding-left: 0;
+            }
+            .course-vid-logo-wrapper
+            {
+                position: absolute;
+                bottom: 0;
+            }
+            /* footer */
+            footer{
+                background-color: #172146;
+            }
+            footer > aside
+            {
+                width: 70%;
+                display: flex;
+                color: white;
+                margin: 0 auto;
+                flex-wrap: wrap;
+            }
+            footer > aside h2
+            {
+                color: rgb(131, 131, 131);
+            }
+            footer > aside p
+            {
+                color: white;
+                cursor: pointer;
+            }
+            footer > aside > div
+            {
+                width: 20%;
+            }
+            @media(max-width: 1350px)
+            {
+                footer > aside > div
+                {
+                    width: 30%;
+                }
+            }
+            @media(max-width: 700px)
+            {
+                footer > aside > div
+                {
+                    width: 100%;
+                }
+            }
+            #total-data
+            {
+                display: none;
+            }
+            /* animation */
+            #animation
+        {
+            display: flex;
+            height: 90vh;
+            justify-content: center;
+            align-items: center;
+        }
+        #animation>div
+        {
+            width: 40px;
+            height: 100px;
+            background-color: black;
+            background: linear-gradient(to top, blue, rgb(6, 6, 126));
+            margin: 2px;
+            display: block;
+            transition: display, 1s, 3s;
+        }
+        #animation > div:first-of-type
+        {
+            animation: rotate infinite 0.5s alternate;
+        }
+        #animation > div:nth-of-type(2)
+        {
+            animation: rotate infinite 0.5s alternate;
+            animation-delay: 0.15s;
+        }
+        #animation > div:nth-of-type(3)
+        {
+            animation: rotate infinite 0.5s alternate;
+            animation-delay: 0.25s;
+        }
+        @keyframes rotate
+        {
+            0%
+            {
+                transform: rotatex(0deg);
+            }
+            100%
+            {
+                transform: rotatex(45deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div>
+            <h1 class="edyoda ed-logo">EDYODA</h1>
+            <p>Courses<i class="fas fa-chevron-down"></i></p>
+            <p>programs<i class="fas fa-chevron-down"></i></p>
+            <p>Hire Edyoda Graduates</p>
+        </div>
+        <div>
+            <div class="input-wrapper">
+                <input class="search-box right-align" type="text" name="search"/>
+                <i id="search-icon" class="fa  fa-search right-align" aria-hidden="true"></i>
+            </div>
+            <div class="bell-icon right-align">
+                <img src="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-ios7-bell-512.png" alt="bell"/>
+            </div>
+            <div class="z-icon right-align">
+                <img src="https://www.edyoda.com/static/media/zen-v5.eb4f9370.png" alt="EdYoda Daily Zens">
+            </div>
+            <div class="avatar-png">
+                <img src="https://edyoda.s3.amazonaws.com/media/profile-picture/profile_pic_karthikdulam2222.jpg" alt="png"/>
+            </div>
+        </div>
+        </div>
+    </header>
+    <section id="topbar2">
+        <div><h1>CSS3-Basics To Advanced</h1></div>
+        <div>
+            <div><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAD8AAAA/CAYAAABXXxDfAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA0NJREFUeNrsW79rFEEUnj1OSATRiBiEWFipWCSVfWIKURBESIiVWPgvBLQImiKeaGFpZacIAW3s1MrCwiaGkDSagIVwFv5oohB4+Wb3vFzu1p25vTczb5JbeDv7dmb39nvfmzdvZ28SIlL7dav2eoPkMXZ59qNC/SL0yyhHIHUcv0H5ErJlvLatjmYDgjeAbNePQX+BcqKt/hZkCcdXUa5b3YvBYStsPkQ5D7dbPwB53QTeWT+K/VvIUOG9iAc4D3iyYCjTb0LOG4x0CsezhQZVfEaosEYQKnTNGYNn/NOvG4GKYd7O5bWctmKQ1EnIgPG+IpgnayMMduHGAz76fJXV5cuMAFx14oY6F0ZgzMncMO+K3aiYdwE0Oua5gIpj3reLi2KePLLbZ57PAPEwb4ope4Z5T/2/z7y3BKfPfPhAFw/zDoc7Wcx7TnTkR/vomXed7XGCT2oqQXEcPzDICKAi7eUmaf1iA9DDKO7iptMoj4gay8vX/cX+C2QR8ogW1K8O8AB+Fg31vPmJ4EOXu9mgDcgk3Vefm+ABvIrKZehnxALlM9AK9mNUU1uVxompFHg3U8U27cpc0811NnWdbc9BrmVBKNvGS/0AdcE29fjwxGqEiZ1oT+poRAGMIwYMtw51G+IjOu996jtuT+m3cT53J4d9l8f93zXB0231HidfeQHqN7jl6Ws4XmwNeHq7gZMfgjLvJri16t/0HyDoYfYPkCZ4upNmPuOQe2mf4B7iXLNb3PYHjp9AxgB8LTe93ZX3zqe5/UHGAPYJ+iHLoDQK/TdTINzEvg7QVJjbl3o5mLN+oJ+Qw5bGG2q0N7alB1JeaUMNXUEnM3wlLaInM0IZIVrmezXCnpjDC2AEPrenQJ4QDfPCjBBm3l5AsHPDfERGkMF8oIgvi3nHSY0/5l0aQVSSQ4E8IRrmXfRzksC8bxcnicxHZgR5LzaeXF5v/Gts/j/PtplrlHygfwoNIWqZiZ0RVo3ekJ37moIna0MJZz7Tn1u2f2bVDUStq1NGUE8hHw1M6gWFNWvDigBv97VEfyi4pPSnonwml7C/oLI5duWDfd9JzvcGwEnIFeh6La0+l62lpcZaWk8ZXrKfV1FvCzAAljBr2KNnWdUAAAAASUVORK5CYII=" alt="enroll"/><p>Enroll</p></div>
+            <div><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAaCAYAAACpSkzOAAAACXBIWXMAAAsSAAALEgHS3X78AAAB40lEQVRIid2WPUgcQRTHfyNXKIHDLpLOwoiNIgQMhhgjooiCIDaCRbrUKRJrjblbovkQO0HSpRK1UARB+8RG0EZjIAQsBBNQAwlC5h9ub8/bm/tw1ZyQDLxiZt/7/+a9ebO7RhLXMSquhfLPgMwkj80Eu+Yl3WUFYRnCUodYMB4d5QMpMEsVliXzgvvlAdnA0sAqxJJ5TsvfB2Uzylgcy6oZpdl1jXyPjEcc0Qa0IBoQtxCNiBtkJHRmh4gOjbEVGWQ8vxRPEP2IypCYK47zLAW7p3F2S4KMRw0wjRgsIFJM3F3bB9qVYK8gyHi0IuYRNyPuvtTaPuJuHsgkeYBY8bvo8uLu2sdYDiRBLWIR/Fa9PCB/bnNAiBlE9RV3785TpRs+A5lxv6s6L3zg551Pqhle8TmbkeVZZPFo5Uq1d49es0emvc0YtxE7EQAHwHfEMeIX4g4EFzY35hviod5kL2wsyKaviPhXxHtgDbGhJEc5zfOUTUSTE3MM9IYhYVCr4/wFMQLMKeG/xQqP/Ex+ILr0lg+ufyxwqA8FLCOGlOCkKCB7ruEK/AT6C0HCGVUHARuIASU5PReS9v8dbO4U0acp1ou5VgQB77BsY3kUGZKOm0V8wjJYCsJFPhNXHf/Z7xbwB6TZTj5QKPn6AAAAAElFTkSuQmCC" alt="share"/><p>Share</p></div>
+            <div><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAQCAYAAAAWGF8bAAAACXBIWXMAAAsSAAALEgHS3X78AAACBUlEQVQ4jbWUS0jUURTGf/9pYhYtwkVPhgLBcGgT0qaFIVSLXDkQag9yNdGiwAEtsaSmLFuIqEmrqKlMCCtdli2kx6rooZOtokUR9MCgjRByzxf/q04zTK6a7ubAvff87nfO+biBJMq5ImWl/Q9g9G+bwSBbMfYj6jASiAqEw/iKyGE8whjRab6U5Bb2MBikGtGLUY/4hjGBmMaYRUQx1iG2Y+zGWIm4OtZEV0OCHyUlBwMcxXiNo8qrc8TVxmEcWRxRHDGMuzpFA44NODpxNCeHeZt9yc4ihUE/PYgOjMuIdrXxyx/2sAXjGWINBoh5jIPKMOrPO1m/OsbwzzlqW2pozjYxFtCnVkQfRlptDBT1o5tbGIcIu7IADOMndbNp6c74DNGzD7k59ZnkmT00BvTqPUYMUakTzBcBMzxB1BbAwqiwf7qEW7o3+oZE4w1mMHIRjBTGWhwjwUViRSMzcj4tBP2J7wph/Y+Jp+4wGiqfPEYyonYmcezzk3U8DTJU54GODI7pAtgsxpF8Ba3sTd/nBcaq6wfYVVfFh7xtgnPUYNzGqMS4hriiC+SCDlZg7EB+ys8Rc4v+TCPqN1fwYDxFy7Y430t92OWTjiPSGBsRH33Z8sqiyPswfDg0+hTivIa4t6yx85snvWlDFXWIxCLAebMvGH1CQ7wqSVwO+C+rvJ8D8BsmP/ycQog5NwAAAABJRU5ErkJggg==" alt="reviews"/><p>Reviews</p></div>
+        </div>
+    </section>
+    <aside id="animation">
+        <div></div>
+        <div></div>
+        <div></div>
+    </aside>
+    <aside id="total-data">
+        <main>
+            <div id="description">
+                <h3>About Course</h3>
+                <p>Hey Guys, in this course we will learn all about CSS right from the basic topics like styling texts and images to advanced topics like responsive design and CSS animations.</p>
+                <br>
+                <p>Hope you are excited. See you in class!!</p>
+                <h3>Pre-requisites</h3>
+                <p>Basic understanding of HTML</p>
+            </div>
+            <section>
+                    <hr class="v-lines" style="position: relative;">
+                    <div id="vid-logos">
+                        <div>
+                            <img class="vid-items" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAcCAYAAAAJKR1YAAAACXBIWXMAAAsSAAALEgHS3X78AAABfUlEQVRIic2WvVLDMAyAPyXMLQPs/BwbMxTCxMYTdGXoBi/RKwscPECXMvMW/GxsvAAsTClT7xiYzLnn9oprt3Go2+hOS6RIX6RYsiilqJRoIFuBBLgDBtolgg5M/GQqtweoFQnE1padO/F063hJXZzKs+Zx/ATe4vMM8/yRav7UQApcAf0l/Tu29k3+dATUWRGIrZ1hy0QkBzZLFvkDeAW+gA3gANguGas/qlCZr3kCGp6x0TD28Lglga5dQ82CSoxfdKDeLBAHWC8mkD4NNUcl1mcA1UJOr29S+6SrlBpYtqYecCJyISJT8Yx/t3CGwApljgqcT9hfgD2HTxarQu9z7Cd65YhIM/C9sYQCRZdQoJ059kdgXyn1YD3fLZogFOjM8ewH+AYugVOllKs9rvfcsqBjX59x7OtmrVRmMN7HntRabwqsDn2luQ2O/Y/l+gwceWAyM5OC48a4fhwCWyVjja8f7ZJVWrS2J/utofIVgeQmf1q5S361VgfwC/VK+hCVm8ZnAAAAAElFTkSuQmCC"
+                            alt="V-symbol"/><p class="vid-items vid-nums">10</p><p>episodes</p>
+                        </div><hr>
+                        <div>
+                            <img class="vid-items" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAASdJREFUeNrMl70NgzAQhbGDm1QRG1BEKWkiCvcMwgxmCaTMk4YRqCJZKTNCJohEzpGREOLHPhuTJ30NcH5gTndnEpkrAwogB1Ig0dffwAtogabrukfkQQwoAQl0hkgdw+AlojmWxIGnheEYFcttjQXwcTDtUWsIU+Pag+GYes1YWCx205g+L+aMueX2HjQ2287HxgyRSL1sE44NjUvEf8MYK8qhsQxoLHvjDJmpWGNFRnUZDK2C6tobWjnVBT+0UjroMiGVxB4WmWqDR+C8FtgiM5P+Unq++9wXYttYN/Er4ktVXW8IIVP3TsBlIVZ5RtUG3WiNyqWAuJC5lEws0rVJYCld2yJ2DmOugwBm/uI+Rh9bxF8Oe7uOt7sO9JsfYcheh7avAAMA3YDBUhd7NlUAAAAASUVORK5CYII="
+                            alt="time-symbol"/><p class="vid-items vid-nums">01</p><p>hours&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                        </div>
+                    </div>
+                    <hr class="v-lines">
+                <div id="videos">
+                    <input type="radio" name="radio" id="r1" />
+                    <input type="radio" name="radio" id="r2" />
+                    <input type="radio" name="radio" id="r3" />
+                    <input type="radio" name="radio" id="r4" />
+                    <input type="radio" name="radio" id="r5" />
+                    <input type="radio" name="radio" id="r6" />
+                    <input type="radio" name="radio" id="r7" />
+                    <input type="radio" name="radio" id="r8" />
+                    <input type="radio" name="radio" id="r9" />
+                    <input type="radio" name="radio" id="r10" />
+    
+                    <div class="video-p"><div><label for="r1"><i class="fas fa-play"></i>CSS - Introduction</label></div><div class="duration">02:29</div></div><hr>
+                    <div class="video-p"><div><label for="r2"><i class="fas fa-play"></i>CSS - How to use CSS?</label></div><div class="duration">11:33</div></div><hr>
+                    <div class="video-p"><div><label for="r3"><i class="fas fa-play"></i>CSS - Styling Text</label></div><div class="duration">11:13</div></div><hr>
+                    <div class="video-p"><div><label for="r4"><i class="fas fa-play"></i>CSS - Adding Borders</label></div><div class="duration">05:48</div></div><hr>
+                    <div class="video-p"><div><label for="r5"><i class="fas fa-play"></i>CSS - Margin and Padding</label></div><div class="duration">05:15</div></div><hr>
+                    <div class="video-p"><div><label for="r6"><i class="fas fa-play"></i>CSS - Styling Lists</label></div><div class="duration">05:17</div></div><hr>
+                    <div class="video-p"><div><label for="r7"><i class="fas fa-play"></i>CSS - Styling Links</label></div><div class="duration">05:11</div></div><hr>
+                    <div class="video-p"><div><label for="r8"><i class="fas fa-play"></i>CSS - Styling Buttons</label></div><div class="duration">06:54</div></div><hr>
+                    <div class="video-p"><div><label for="r9"><i class="fas fa-play"></i>CSS - Adding Icos</label></div><div class="duration">05:44</div></div><hr>
+                    <div class="video-p"><div><label for="r10"><i class="fas fa-play"></i>CSS - Working with Dispay Values</label></div><div class="duration">04:04</div></div><hr>
+                
+                
+                    <iframe class="frames" id="d1" src="https://player.vimeo.com/video/350556724" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                    <iframe class="frames" id="d2" src="https://player.vimeo.com/video/350556734" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                    <iframe class="frames" id="d3" src="https://player.vimeo.com/video/350556739" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                    <iframe class="frames" id="d4" src="https://player.vimeo.com/video/350556746" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                    <iframe class="frames" id="d5" src="https://player.vimeo.com/video/350556752" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                    <iframe class="frames" id="d6" src="https://player.vimeo.com/video/350556757" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                    <iframe class="frames" id="d7" src="https://player.vimeo.com/video/350556760" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                    <iframe class="frames" id="d8" src="https://player.vimeo.com/video/350912396" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                    <iframe class="frames" id="d9" src="https://player.vimeo.com/video/350912409" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                    <iframe class="frames" id="d10" src="https://player.vimeo.com/video/350912418" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                    
+                </div>
+            </section>
+        </main>
+        <section id="duplicate">
+    
+        </section>
+        <section id="author-desc">
+            <div>
+                <div>
+                    <div><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAYCAYAAAD6S912AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAnxJREFUeNqMlV2IjUEYx+c9DrvUChubj4h81RIlFySJuOAoacOFZNuk1JbIypILxcnazmEvt5AbXyVJygWKuHGhpORi0QoXykcr7a617/jNe55zzvPO2fMxnf/8/zPPzLzPPPPMnMD0WGP4RUWzNQnqdng23Av3efac7DCxkigYS7EVXATHTGjewVlQjy6OCU1JKV2wOOGX6h8HDoOXYKnq3xmcM4dAfX7BpHYfXgJaUf3wc7Ad3S39riyX/m3oifAdmb+RusUNCEzG6pi8gZepOPVRX4YbwRGJq+v/Cc6gssrbHfa0uedvecjb9kJ0Gt4LroJBsU0FB9FP1NyjOQ8vWH1y86j3w5vB2sgeD8kLsEZ5egvsVvNnBabLlqSC6BngAOo43KBsH8F8af+Av4NFYtuV8Lao9TdwlnYz/FrZmsAfaU+DJytbczIWQ2Nmwu3yxQHYHdJtsEUOzHk9Cf1XzWtSu5oemLTVh3KDeo+3/RFwPspFY06MERqtryUl2ztprAALxhg8Hj4FPlVYqKDdllNRrHIdz6KrZs0wLRebfWCx2OZW8c6V327BTV5id6t2RmKYquaZ6OEEW25QJ3zfu9eDcBv4VyYTfD3g0uaL6myMDSimT3+FV0njs1vwqfqSu68TvK+6VJlTxbO8/pBf8L0YVsGPwXr0FHh19KKEpq4G70bBK5c2ozRP0rgpgV1X8Lq2g8jzI5vJxdB55i759Rq3VQ5d/ovdCu7WGHwfvTbLUxZbMIzuZwvoRA9V9Cze9zC6/4X/lLgxBGl58q9ED2p5r0bkEqTsJZyREpgOWyng7qQ3wCth9xLVod3z/xZ+AH+1PfF/vf8CDADYbuiWEIlFJwAAAABJRU5ErkJggg==" alt="like"/><p>Like</p></div>
+                    <div><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAaCAYAAACpSkzOAAAACXBIWXMAAAsSAAALEgHS3X78AAAB40lEQVRIid2WPUgcQRTHfyNXKIHDLpLOwoiNIgQMhhgjooiCIDaCRbrUKRJrjblbovkQO0HSpRK1UARB+8RG0EZjIAQsBBNQAwlC5h9ub8/bm/tw1ZyQDLxiZt/7/+a9ebO7RhLXMSquhfLPgMwkj80Eu+Yl3WUFYRnCUodYMB4d5QMpMEsVliXzgvvlAdnA0sAqxJJ5TsvfB2Uzylgcy6oZpdl1jXyPjEcc0Qa0IBoQtxCNiBtkJHRmh4gOjbEVGWQ8vxRPEP2IypCYK47zLAW7p3F2S4KMRw0wjRgsIFJM3F3bB9qVYK8gyHi0IuYRNyPuvtTaPuJuHsgkeYBY8bvo8uLu2sdYDiRBLWIR/Fa9PCB/bnNAiBlE9RV3785TpRs+A5lxv6s6L3zg551Pqhle8TmbkeVZZPFo5Uq1d49es0emvc0YtxE7EQAHwHfEMeIX4g4EFzY35hviod5kL2wsyKaviPhXxHtgDbGhJEc5zfOUTUSTE3MM9IYhYVCr4/wFMQLMKeG/xQqP/Ex+ILr0lg+ufyxwqA8FLCOGlOCkKCB7ruEK/AT6C0HCGVUHARuIASU5PReS9v8dbO4U0acp1ou5VgQB77BsY3kUGZKOm0V8wjJYCsJFPhNXHf/Z7xbwB6TZTj5QKPn6AAAAAElFTkSuQmCC" alt="share"/><p>Share</p></div>
+                    <div><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB8AAAAVCAYAAAC+NTVfAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAvNJREFUeNqclk1sTFEUx8+ddmGKHYkSRMRCLKhFEZFY2DQ+ikZ8LNhXpSPVtBjNSGlaRMwMs+9KG1E0xMZCIg26UBZiISKNVCUkXfhMk3nX/9y5M73vvPfmqZf55c79ePfc/7nnnvsUFTQRfuaJLmvAZdCO2jTKFjDB/bqDSF2jBvy/C+rBDZDW3VSkmCcRatDFo0UoH4AusAD1NSgzlX4yYzKm3UO/pm5wR/VR3b8Zj2YFeAZ2iwUVgbtgz+ljDoAnqpeW/q9xduU42GQnLLez2y9UDJWUp8EXZwyzDYypi7Q22jiFGt6DiVjxcqH4DdiC/29dt+uzpr4VvKsstMQ68EL1UGO4cc83OZen7B4vFIofgx3gk89A2fPnaRL17XbRrpAl4KlKU3M1t3NE5/FyDmVCKC6AveB7wEvOo3toBm27MG5YeCCJ9hF1jlqDxucius0JmnIgnQYnQdHXJ5RXFpChWYw7Cq4KAezlW6qLBoDisYqua47ohyaw/Pv/y04yGlDq1KE28oFSFpMNCewhcIIbR4xhv6ppu7+jIee+qnKfF/ropklIHv0WJ+EIGGRXNIREezvaXwUMSTTFPrqf7rNKsZ1MS8KkxeCkg2B/TAKKVW5c30mbMS4beA/pOWFXNSQ6k4AX1VZVtY41vM9myHrh9teoH2S3z4Jj4IqYPGGOnka7RmBG7X2U4TOUwrh7oE4ofsTxpLM0VWs7tL04Jq1BNzo7wSpwHMwGMmJQLecLzhWtISeEAzClc6Ubr1a4owCmwG2QdF46bFNtM5iJMg61i9E2jL9NwlNsJQW1+biLhZPNTvBN7DMfvTGwOsw4DK+0+9skBP3kRUvDc7k9yLi9KN6LfV7PFwXY4BpXHah79BL1jWJ/P5v9zSGJzetK9eiDvSieCyXLwCVfwGnqjYjoRhieiL5Sqx0jTV/NRcFR6+9LiGCqCY3oPOJn3h8T/oVwjj8E+sEftH00n03yM0qjnfs1DZg9ztOPuAT0V4ABAPRRXOUIxlcZAAAAAElFTkSuQmCC" alt="embed"/><p>Embed</p></div>
+                </div>
+                <div><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAACwElEQVRoQ+2aS2sUQRDHfzVBgxARfIDgA/SmFyXxGYVc9EP4OinsZkZUPEj0A7jBgxhwxqzoyUQ/hB4U1Gh0o17MTcEXgg8QA2IkUzK7G6KbTbYPtcMO7Bxniu7/r6q6e7q6hWY8l3UZS1gLdFWbn+IPnzkrv6y7E+sGiXQPEAD7gHWAAp+AR0CIL08s+7QFGNa9xNwBNgK1bScg7/A4RF7GrCDsAG7qcqa5j9LdQNwLOunjuPy0gLADCNVHuFrH87U6FeUkgUStBRDpU2CXo6hxfNntaLuomV0Erul7lPVOooQP9MsGJ9sGRpYAJYf8r8gRJuiXntYCCPUcwqDjGBggkEutBXBDVzLNQ2BLA2GTLGU/J+R7awEkaob1IDGjwJoFxH0BDuPLPQvxlWy0fioQA8BWYFW1+W/AazwGyctdyy7tARJ1RV3BTDmV5gA6mCQnPyzFNycC1gpTm0ZTFj7bXXNSKEWYNkCKzq7bVXMiMKzbiDkP9FY3NGN4FMjLK2tgW4CirmamLPwM4NWIjYErdFAgJ1+tQGwBQh1CyAGdCwj8DVzHl1OtBxDqdoRSHc/Xao1RegjkpQWEXQQivQUcdRQ1gi/HHG0XNbMEeANschT1Fl82O9q2AdwcFeoIwhEnY2WUQFzTLaUIVOb+CadB7NFttSbYjYHETy7TqFIkkNNOkXIwsgVIFrKYCyiJwPkLmTCEx8XWXchmPfb/r0Ty9nE2fiUcQm5tYptC1uoc2msDODipqSbtCNR1b6bLKpEegPKmZn5hCwqWVbnEebYpVBF/O5ulxcwXdzNfXo/0OeB6aFHClx0W86vdGMj8EVOk48BOR68+wxfXA8GUNjSZP2YNtQuPBw0P+pIDvpg+AplyjFZKEajsyHqR8jqQwasGc5uZ5L6E/89lj+TLx/JlD4/I8p6E/Uo8C5HidZu/Lb7cMVHRZLIAAAAASUVORK5CYII=" alt="menu"/></div>
+            </div>
+            <div>
+                <h3>6 likes</h3> | <h3>487 views</h3> | <h3>0 comments</h3>
+            </div>
+            <div>
+                <div>
+                    <img src="https://edyoda.s3.amazonaws.com/media/profile-picture/profile_pic_qaifikhan_lPKnzfH.jpg" alt="at-logo"/>
+                    <p>Qaifi Khan</p>
+                </div>
+                <div>
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAdRJREFUeNqM1F8oQ3EUB/C7sWbKVuKBUYoi1NSyZxZvorx4kReilPagSKGkiPKiKCQkefGEotTsiVoJeSblX6GVJfPnge+pszqOX7Nbn+z35x7nd+651+au7d6xLOsL3uABbuACziFm/XO9RBd+jTP5rwM8rAIa4ZuD7kKUx/9emSnWbFDDKOtFOEsn4Da4wA3FUGjYR/PjEIF5SKQKuKTm6Nh+CIJPrdVBOYzBnSmg3VRnCMMwhOBUrRfANJSlG1BeVzAKM/Au5t2cpfdP4bltqCbPcAkncAwfaq+X65gv5qjNQmidhM7QxYWnGvXDCrRxOyUvqtkAPKnj96Zz5Bxoh1koEfN0ihF1/DpPoKdGBtyHI7g2BC6CKahWmc6pfd0IaksGpMVJ6INO2IJPsTmbs5KZRtTTp3IFTEd+hDVulxsVdFDVdFXd25SqhrcwpILS8VtVS52LsQ/HzrXz29IFG7AOHfyPqMEn1PFbwCnGYfXu+zKcXj8Fa+aNWVDFi/QJi3NLVfJNTs46+QBjKutXyqTBcOSg+L2n1vzqNb2XD8fO2Zg+XfJByZYqVXtlnQso4KEhoJ6TWeSptbjsBnogyzyo56/yAWymuMml1uS30fEjwADL2mcVkjnFPQAAAABJRU5ErkJggg==" alt="subscribe"/>
+                    <p>Subscribe</p>
+                </div>
+            </div>
+            <p class="author-p">Published on 27 Jul 2019</p>
+            <p class="author-p">Hey guys, in this video we will learn all about CSS consepts.</p>
+            <br>
+            <div>
+                <h3>COMMENTS</h3>
+                <h3>TRANSCRIPT</h3>
+            </div>
+            <hr>
+            <div>
+                <input type="text" placeholder="Add a comment..."/><i class="fas fa-chevron-circle-right"></i>
+                <p class="author-p">Be the first one to post a comment</p>
+            </div>
+            <br>
+            <br>
+            <br>
+        </section>
+        <section id="reviews">
+            <h1>Course Reviews</h1>
+            <hr>
+            <div>
+                <img src="https://st2.depositphotos.com/9223672/12056/v/450/depositphotos_120568244-stock-illustration-male-face-avatar-logo-template.jpg" alt=""/>
+                <div>
+                    <h3 class="review-name">Akhil Kumar</h3>|<p class="review-name author-p">6 hours ago</p>
+                    <p class="author-p">The course has been delivered beautifully and the content is of value,it is definitely a course which every front end developer should consider taking</p>
+                </div>
+            </div>
+            <div>
+                <img src="https://st2.depositphotos.com/9223672/12056/v/450/depositphotos_120568244-stock-illustration-male-face-avatar-logo-template.jpg" alt=""/>
+                <div>
+                    <h3 class="review-name">Ajay Kumar</h3>|<p class="review-name author-p">6 months ago</p>
+                    <p class="author-p">I really loved the entire course and the mentor explained the concepts in the simplest way possible. i feel like this is the best site to learn new online technologies.</p>
+                </div>
+            </div>
+            <div>
+                <img src="https://st2.depositphotos.com/9223672/12056/v/450/depositphotos_120568244-stock-illustration-male-face-avatar-logo-template.jpg" alt=""/>
+                <div>
+                    <h3 class="review-name">Lakkidi Karthik</h3>|<p class="review-name author-p">1 year ago</p>
+                    <p class="author-p">This course is really helpful . i was beginner for front end now i am able to create the web pages .they cover all point very clearly.</p>
+                </div>
+            </div>
+            <div>
+                <h2>VIEW MORE</h2>
+            </div>
+            <br>
+            <br>
+            <br>
+        </section>
+        <section id="courses">
+            <div>
+                <h1>Related Courses</h1>
+                <h3>VIEW ALL</h3>
+            </div>
+            <hr>
+            <aside>
+                <div>
+                    <div>
+                        <p>Intermediate</p>
+                    </div>
+                    <h3>Cascading Style Sheets</h3>
+                    <div>
+                        <img class="author-img" src="https://st2.depositphotos.com/9223672/12056/v/450/depositphotos_120568244-stock-illustration-male-face-avatar-logo-template.jpg" alt="a-logo"/><h4>sanjeevinikranthi</h4>
+                    </div>
+                    <div class="course-vid-logo-wrapper">
+                        <div class="card-logos">
+                            <div>
+                                <img class="vid-items" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAcCAYAAAAJKR1YAAAACXBIWXMAAAsSAAALEgHS3X78AAABfUlEQVRIic2WvVLDMAyAPyXMLQPs/BwbMxTCxMYTdGXoBi/RKwscPECXMvMW/GxsvAAsTClT7xiYzLnn9oprt3Go2+hOS6RIX6RYsiilqJRoIFuBBLgDBtolgg5M/GQqtweoFQnE1padO/F063hJXZzKs+Zx/ATe4vMM8/yRav7UQApcAf0l/Tu29k3+dATUWRGIrZ1hy0QkBzZLFvkDeAW+gA3gANguGas/qlCZr3kCGp6x0TD28Lglga5dQ82CSoxfdKDeLBAHWC8mkD4NNUcl1mcA1UJOr29S+6SrlBpYtqYecCJyISJT8Yx/t3CGwApljgqcT9hfgD2HTxarQu9z7Cd65YhIM/C9sYQCRZdQoJ059kdgXyn1YD3fLZogFOjM8ewH+AYugVOllKs9rvfcsqBjX59x7OtmrVRmMN7HntRabwqsDn2luQ2O/Y/l+gwceWAyM5OC48a4fhwCWyVjja8f7ZJVWrS2J/utofIVgeQmf1q5S361VgfwC/VK+hCVm8ZnAAAAAElFTkSuQmCC"
+                                alt="V-symbol"/><p class="vid-items vid-nums">03</p><p>episodes</p>
+                            </div>
+                            <div>
+                                <img class="vid-items" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAASdJREFUeNrMl70NgzAQhbGDm1QRG1BEKWkiCvcMwgxmCaTMk4YRqCJZKTNCJohEzpGREOLHPhuTJ30NcH5gTndnEpkrAwogB1Ig0dffwAtogabrukfkQQwoAQl0hkgdw+AlojmWxIGnheEYFcttjQXwcTDtUWsIU+Pag+GYes1YWCx205g+L+aMueX2HjQ2287HxgyRSL1sE44NjUvEf8MYK8qhsQxoLHvjDJmpWGNFRnUZDK2C6tobWjnVBT+0UjroMiGVxB4WmWqDR+C8FtgiM5P+Unq++9wXYttYN/Er4ktVXW8IIVP3TsBlIVZ5RtUG3WiNyqWAuJC5lEws0rVJYCld2yJ2DmOugwBm/uI+Rh9bxF8Oe7uOt7sO9JsfYcheh7avAAMA3YDBUhd7NlUAAAAASUVORK5CYII="
+                                alt="time-symbol"/><p class="vid-items vid-nums">41</p><p>minutes&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                            </div>
+                        </div>
+                        <p>3 recommended | 150 enrolled</p>
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <p>Beginner</p>
+                    </div>
+                    <h3>Website Project: Build a website with pure HTML and CSS</h3>
+                    <div>
+                        <img class="author-img" src="https://edyoda.s3.amazonaws.com/media/profile-picture/profile_pic_qaifikhan_lPKnzfH.jpg" alt="a-logo"/><h4>Qaifi Khan</h4>
+                    </div>
+                    <div class="course-vid-logo-wrapper">
+                        <div class="card-logos">
+                            <div>
+                                <img class="vid-items" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAcCAYAAAAJKR1YAAAACXBIWXMAAAsSAAALEgHS3X78AAABfUlEQVRIic2WvVLDMAyAPyXMLQPs/BwbMxTCxMYTdGXoBi/RKwscPECXMvMW/GxsvAAsTClT7xiYzLnn9oprt3Go2+hOS6RIX6RYsiilqJRoIFuBBLgDBtolgg5M/GQqtweoFQnE1padO/F063hJXZzKs+Zx/ATe4vMM8/yRav7UQApcAf0l/Tu29k3+dATUWRGIrZ1hy0QkBzZLFvkDeAW+gA3gANguGas/qlCZr3kCGp6x0TD28Lglga5dQ82CSoxfdKDeLBAHWC8mkD4NNUcl1mcA1UJOr29S+6SrlBpYtqYecCJyISJT8Yx/t3CGwApljgqcT9hfgD2HTxarQu9z7Cd65YhIM/C9sYQCRZdQoJ059kdgXyn1YD3fLZogFOjM8ewH+AYugVOllKs9rvfcsqBjX59x7OtmrVRmMN7HntRabwqsDn2luQ2O/Y/l+gwceWAyM5OC48a4fhwCWyVjja8f7ZJVWrS2J/utofIVgeQmf1q5S361VgfwC/VK+hCVm8ZnAAAAAElFTkSuQmCC"
+                                alt="V-symbol"/><p class="vid-items vid-nums">07</p><p>episodes</p>
+                            </div>
+                            <div>
+                                <img class="vid-items" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAASdJREFUeNrMl70NgzAQhbGDm1QRG1BEKWkiCvcMwgxmCaTMk4YRqCJZKTNCJohEzpGREOLHPhuTJ30NcH5gTndnEpkrAwogB1Ig0dffwAtogabrukfkQQwoAQl0hkgdw+AlojmWxIGnheEYFcttjQXwcTDtUWsIU+Pag+GYes1YWCx205g+L+aMueX2HjQ2287HxgyRSL1sE44NjUvEf8MYK8qhsQxoLHvjDJmpWGNFRnUZDK2C6tobWjnVBT+0UjroMiGVxB4WmWqDR+C8FtgiM5P+Unq++9wXYttYN/Er4ktVXW8IIVP3TsBlIVZ5RtUG3WiNyqWAuJC5lEws0rVJYCld2yJ2DmOugwBm/uI+Rh9bxF8Oe7uOt7sO9JsfYcheh7avAAMA3YDBUhd7NlUAAAAASUVORK5CYII="
+                                alt="time-symbol"/><p class="vid-items vid-nums">02</p><p>hours&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                            </div>
+                        </div>
+                        <p>13 recommended | 1004 enrolled</p>
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <p>Beginner</p>
+                    </div>
+                    <h3>HTML in depth</h3>
+                    <div>
+                        <img class="author-img" src="https://st2.depositphotos.com/9223672/12056/v/450/depositphotos_120568244-stock-illustration-male-face-avatar-logo-template.jpg" alt="a-logo"/><h4>Chidre's Tech Tutorials</h4>
+                    </div>
+                    <div class="course-vid-logo-wrapper">
+                        <div class="card-logos">
+                            <div>
+                                <img class="vid-items" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAcCAYAAAAJKR1YAAAACXBIWXMAAAsSAAALEgHS3X78AAABfUlEQVRIic2WvVLDMAyAPyXMLQPs/BwbMxTCxMYTdGXoBi/RKwscPECXMvMW/GxsvAAsTClT7xiYzLnn9oprt3Go2+hOS6RIX6RYsiilqJRoIFuBBLgDBtolgg5M/GQqtweoFQnE1padO/F063hJXZzKs+Zx/ATe4vMM8/yRav7UQApcAf0l/Tu29k3+dATUWRGIrZ1hy0QkBzZLFvkDeAW+gA3gANguGas/qlCZr3kCGp6x0TD28Lglga5dQ82CSoxfdKDeLBAHWC8mkD4NNUcl1mcA1UJOr29S+6SrlBpYtqYecCJyISJT8Yx/t3CGwApljgqcT9hfgD2HTxarQu9z7Cd65YhIM/C9sYQCRZdQoJ059kdgXyn1YD3fLZogFOjM8ewH+AYugVOllKs9rvfcsqBjX59x7OtmrVRmMN7HntRabwqsDn2luQ2O/Y/l+gwceWAyM5OC48a4fhwCWyVjja8f7ZJVWrS2J/utofIVgeQmf1q5S361VgfwC/VK+hCVm8ZnAAAAAElFTkSuQmCC"
+                                alt="V-symbol"/><p class="vid-items vid-nums">104</p><p>episodes</p>
+                            </div>
+                            <div>
+                                <img class="vid-items" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAASdJREFUeNrMl70NgzAQhbGDm1QRG1BEKWkiCvcMwgxmCaTMk4YRqCJZKTNCJohEzpGREOLHPhuTJ30NcH5gTndnEpkrAwogB1Ig0dffwAtogabrukfkQQwoAQl0hkgdw+AlojmWxIGnheEYFcttjQXwcTDtUWsIU+Pag+GYes1YWCx205g+L+aMueX2HjQ2287HxgyRSL1sE44NjUvEf8MYK8qhsQxoLHvjDJmpWGNFRnUZDK2C6tobWjnVBT+0UjroMiGVxB4WmWqDR+C8FtgiM5P+Unq++9wXYttYN/Er4ktVXW8IIVP3TsBlIVZ5RtUG3WiNyqWAuJC5lEws0rVJYCld2yJ2DmOugwBm/uI+Rh9bxF8Oe7uOt7sO9JsfYcheh7avAAMA3YDBUhd7NlUAAAAASUVORK5CYII="
+                                alt="time-symbol"/><p class="vid-items vid-nums">16</p><p>hours&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                            </div>
+                        </div> 
+                        <p>5 recommended | 268 enrolled</p>   
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <p>Beginner</p>
+                    </div>
+                    <h3>CSS in depth</h3>
+                    <div>
+                        <img class="author-img" src="https://st2.depositphotos.com/9223672/12056/v/450/depositphotos_120568244-stock-illustration-male-face-avatar-logo-template.jpg" alt="a-logo"/><h4 >Chidre's Tech Tutorials</h4>
+                    </div>
+                    <div class="course-vid-logo-wrapper">
+                        <div class="card-logos">
+                            <div>
+                                <img class="vid-items" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAcCAYAAAAJKR1YAAAACXBIWXMAAAsSAAALEgHS3X78AAABfUlEQVRIic2WvVLDMAyAPyXMLQPs/BwbMxTCxMYTdGXoBi/RKwscPECXMvMW/GxsvAAsTClT7xiYzLnn9oprt3Go2+hOS6RIX6RYsiilqJRoIFuBBLgDBtolgg5M/GQqtweoFQnE1padO/F063hJXZzKs+Zx/ATe4vMM8/yRav7UQApcAf0l/Tu29k3+dATUWRGIrZ1hy0QkBzZLFvkDeAW+gA3gANguGas/qlCZr3kCGp6x0TD28Lglga5dQ82CSoxfdKDeLBAHWC8mkD4NNUcl1mcA1UJOr29S+6SrlBpYtqYecCJyISJT8Yx/t3CGwApljgqcT9hfgD2HTxarQu9z7Cd65YhIM/C9sYQCRZdQoJ059kdgXyn1YD3fLZogFOjM8ewH+AYugVOllKs9rvfcsqBjX59x7OtmrVRmMN7HntRabwqsDn2luQ2O/Y/l+gwceWAyM5OC48a4fhwCWyVjja8f7ZJVWrS2J/utofIVgeQmf1q5S361VgfwC/VK+hCVm8ZnAAAAAElFTkSuQmCC"
+                                alt="V-symbol"/><p class="vid-items vid-nums">91</p><p>episodes</p>
+                            </div>
+                            <div>
+                                <img class="vid-items" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAASdJREFUeNrMl70NgzAQhbGDm1QRG1BEKWkiCvcMwgxmCaTMk4YRqCJZKTNCJohEzpGREOLHPhuTJ30NcH5gTndnEpkrAwogB1Ig0dffwAtogabrukfkQQwoAQl0hkgdw+AlojmWxIGnheEYFcttjQXwcTDtUWsIU+Pag+GYes1YWCx205g+L+aMueX2HjQ2287HxgyRSL1sE44NjUvEf8MYK8qhsQxoLHvjDJmpWGNFRnUZDK2C6tobWjnVBT+0UjroMiGVxB4WmWqDR+C8FtgiM5P+Unq++9wXYttYN/Er4ktVXW8IIVP3TsBlIVZ5RtUG3WiNyqWAuJC5lEws0rVJYCld2yJ2DmOugwBm/uI+Rh9bxF8Oe7uOt7sO9JsfYcheh7avAAMA3YDBUhd7NlUAAAAASUVORK5CYII="
+                                alt="time-symbol"/><p class="vid-items vid-nums">15</p><p>hours&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                            </div>
+                        </div>
+                        <p>2 recommended | 218 enrolled</p>
+                    </div>
+                </div>
+            </aside>
+        </section>
+        <footer>
+            <aside>
+                <div>
+                    <h2>EDYODA</h2>
+                    <p>About Us</p>
+                    <p>Contact Us</p>
+                    <p>Terms of Use</p>
+                    <p>Privacy Policy</p>
+                </div>
+                <div>
+                    <h2>PROGRAMS</h2>
+                    <p>All Programs</p>
+                    <p>Full Stack Developer</p>
+                    <p>Python-Django Developer</p>
+                    <p>Essential Python for Data Science & Web Development</p>
+                    <p>Angular Developer</p>
+                    <p>Django Developer</p>
+                    <p>Node.Js Developer</p>
+                </div>
+                <div>
+                    <h2>RESOURCES</h2>
+                    <p>Courses</p>
+                    <p>Learning videos</p>
+                    <p>EdYoda Stories</p>
+                </div>
+                <div>
+                    <h2>FOR ENTERPRISES</h2>
+                    <P>Hire EdYoda Graduates</P>
+                    <p>Train Your Employees</p>
+                    <h2>QUICK LINKS</h2>
+                    <p>Learn and Earn</p>
+                    <p>Become a Learning-Enabler</p>
+                    <p>Tips for Learning-Enabler</p>
+                    <p>Payment Link</p>
+                </div>
+                <div>
+                    <h2>CONNECT</h2>
+                    <p>2nd Floor #188, Survey No. - 123/1,
+                        Incubes Building Next to McDonalds,
+                        ITPL Main Rd, Brookefield,
+                        Bengaluru, Karnataka-560037,
+                        India
+                    </p>
+                    <p><i class="fas fa-envelope"></i> &nbsp;hello@edyoda.com</p>
+                    <p><i class="fas fa-phone-alt"></i> &nbsp;+91 8971554184</p>
+                    <p>
+                        <i class="fas fa-map-marker-alt"></i>&nbsp;&nbsp;
+                        <i class="fab fa-twitter"></i>&nbsp;&nbsp;
+                        <i class="fab fa-twitter"></i>&nbsp;&nbsp;
+                        <i class="fab fa-linkedin-in"></i>
+                    </p>
+                    <p>&#169; 2020</p>
+                    <p>ZekeLabs Technologies Private Limited</p>
+                </div>
+            </aside>
+        </footer>
+    </aside>
+    <script>
+        var animation = document.getElementById('animation')
+        var totaldata = document.getElementById('total-data')
+        setTimeout(function() {
+            animation.style.display = "none";
+            totaldata.style.display = "block";
+        },3000) 
+    </script>
+</body>
+</html>

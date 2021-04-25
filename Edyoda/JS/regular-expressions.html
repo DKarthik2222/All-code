@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regular Expressions in JS</title>
+</head>
+<body>
+    <script>
+        console.clear()
+        var str="This is a black ball pen. This pen is really smooth. It is a parker PEN";
+        // var pattern=/pen/gi;
+        var pattern=new RegExp('pen','gi');
+        console.log(str.search(pattern))
+        console.log(pattern.test(str))
+        console.log(str.match(pattern))
+
+        var str="He was born in the year 1998 and his age 22%@ 123 0";
+        var pattern=/[\d]{2,4}/g;
+        console.log(str.search(pattern))
+        console.log(pattern.test(str))
+        console.log(str.match(pattern))
+
+        //to check whether the given number is valid or not
+
+        var str="+91 9133886211"
+        var pattern=/^(\+91 )?[\d]{10}$/g
+        console.log(str," is ",str.match(pattern))
+
+        //to check whether the URL is valid or not
+
+        var str="www.google.org"
+        var pattern=/^www\.[\w]+\.(com|in|co|org)$/g
+        console.log(str.match(pattern))
+    </script>
+</body>
+</html>

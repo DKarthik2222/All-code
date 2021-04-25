@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Function Map()</title>
+    <script>
+        console.clear();
+
+        //arrays
+        const arr=[1,2,3,4,5]
+        // let newArr=[];
+        // const doubleValues= item =>item*2
+        // for(let i=0;i<arr.length;i++)
+        // {
+        //     newArr.push(doubleValues(arr[i]))
+        // }
+        let newArr=arr.map((data, pos) => {
+            console.log(`Item at pos: ${pos} is ${data}`);
+            return data*2
+        })
+        console.log(newArr)
+
+        //objects
+        const mArr=[
+            {
+                name:'kk',
+                exp:2,
+                age:33
+            },
+            {
+                name:'dk',
+                exp:0,
+                age:23
+            },
+            {
+                name:'ak',
+                exp:5,
+                age:53
+            }
+        ]
+        let newArr2=mArr.map((data, pos) => {
+            console.log(data);
+            return {
+                name:data.name,
+                exp:data.exp
+            }
+        })
+        console.log(newArr2)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

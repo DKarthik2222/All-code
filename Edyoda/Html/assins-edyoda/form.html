@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survey Form</title>
+    <style>
+        body
+        {
+            margin: 0;
+            background-color: lightblue;
+        }
+        header
+        {
+            background-color: white;
+            height: 60px;
+        }
+        #heading
+        {
+            margin-top: 50px;
+            font-size: 50px;
+            margin-bottom: 0;
+            text-align: center;
+        }
+        #desc
+        {
+            text-align: center;
+            font-size: 20px;
+        }
+        main
+        {   
+            width: 100%;
+            margin-bottom: 100px;
+        }
+        form
+        {
+            color: white;
+            margin-left: auto;
+            margin-right: auto;
+            background-color: rgb(64, 64, 92);
+            width: 50%;
+            padding: 10px 50px;
+            border-radius: 8px;
+        }
+        form p
+        {
+            font-size: 24px;
+            margin-bottom: 4px;
+        }
+        input, textarea
+        {
+            width: 100%;
+            box-sizing: border-box;
+            font-size: 18px;
+            border-radius: 8px;
+            outline: none;
+            padding: 10px;
+        }
+        .options
+        {
+            /* width: auto; */
+            height:25px; 
+            width:25px; 
+            vertical-align: middle;
+            background-color: black;            
+        }
+        label
+        {
+            font-size: 24px;
+            margin-left: 10px;
+        }
+        #submit
+        {
+            background-color: rgb(51, 110, 51);
+            color: white;
+            padding: 20px;
+            margin-top: 30px;
+            margin-bottom: 50px;
+        }
+        .brackets
+        {
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <header>    </header>
+    <main>
+        <h1 id="heading">Survey Form</h1>
+        <p id="desc"><i>Thank you for taking the time to help us improve the platform</i></p>
+        <form>
+            <p>Name</p>
+            <input type="text" name="name" placeholder="Enter your name" required/>
+            <p>Email</p>
+            <input type="email" name="mail" placeholder="Enter your Email" required/>
+            <p class="brackets">Age&nbsp;</p><div class="brackets">(optional)</div>
+            <input type="number" name="age" placeholder="Age"/>
+            <p>Which option best describes your current role?</p>
+            <input list="roles" name="roles" placeholder="Select current role" required/>
+            <datalist id="roles">
+                <option value="Student">
+                <option value="Software Developer">
+                <option value="Entrepreneur">
+            </datalist>
+            <p>Would you recommend this application to a friend?</p>
+            <input class="options" type="radio" name="current-role" required><label>Definitely</label><br>
+            <input class="options" type="radio" name="current-role" required><label>Maybe</label><br>
+            <input class="options" type="radio" name="current-role" required><label>Not sure</label></input>
+            <p>What is your favorite feature of the application?</p>
+            <input list="favorite" name="favorite" placeholder="Select current role" required/>
+            <datalist id="favorite">
+                <option value="Projects">
+                <option value="Assessments">
+                <option value="Mentorship">
+                <option value="Live Sessions">
+                <option value="Practice Problems">
+                <option value="Support">
+                <option value="Videos">
+                <option value="Recordings">
+            </datalist>
+            <p class="brackets">What would you like to see improved?&nbsp;</p><div class="brackets">(check all that apply)</div><br>
+            <input class="options" type="checkbox" value="projects"><label>Projects</label><br>
+            <input class="options" type="checkbox" value="Assessments"><label>Assessments</label><br>
+            <input class="options" type="checkbox" value="Mentorship"><label>Mentorship</label><br>
+            <input class="options" type="checkbox" value="live-sessions"><label>Live Sessions</label><br>
+            <input class="options" type="checkbox" value="p-pblms"><label>Practice Problems</label><br>
+            <input class="options" type="checkbox" value="Support"><label>Support</label><br>
+            <input class="options" type="checkbox" value="Videos"><label>Videos</label><br>
+            <input class="options" type="checkbox" value="Recordings"><label>Recordings</label>
+            <p>Any comments or suggestions?</p>
+            <textarea name="comments" rows="6" cols="30" placeholder="Enter your comment here..." required></textarea>
+            <input id="submit" type="submit" value="Submit">
+        </form>
+    </main>
+</body>
+</html>

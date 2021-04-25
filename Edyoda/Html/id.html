@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML-ID's</title>
+    <style>
+        .menu-item
+        {
+            display: inline;
+            padding: 12px 16px;
+            background-color: lightblue;
+        }
+        .section
+        {
+            width: 100%;
+            height: 950px;
+        }
+        .section-heading
+        {
+            font-size: 50px;
+        }
+        #first-section
+        {
+            background-color: lightblue;
+        }
+        #second-section
+        {
+            background-color: lightgreen;
+        }
+        #third-section
+        {
+            background-color: lightpink;
+        }
+        #topbar
+        {
+            list-style-type: none;
+            background-color: lightpink;
+            padding: 16px;
+            position: sticky;
+            top: 100px;
+        }
+    </style>
+</head>
+<body style="margin: 0;">
+
+    <div id="first-section" class="section">
+        <h1 class="section-heading">Landing Section</h1>
+    </div>
+    <ul id="topbar">
+        <li class="menu-item"><a href="/id.html#first-section">Home</a></li>
+        <li class="menu-item"><a href="/id.html#second-section">About</a></li>
+        <li class="menu-item"><a href="/id.html#third-section">Contact</a></li>
+    </ul>
+    <div id="second-section" class="section">
+        <h1 class="section-heading">About Section</h1>
+    </div>
+    <div id="third-section" class="section">
+        <h1 class="section-heading">Contact Section</h1>
+    </div>
+</body>
+</html>

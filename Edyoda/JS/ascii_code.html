@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;900&display=swap" rel="stylesheet">
+    <style>
+        body
+        {
+            height: 90vh;
+            background-color: #424242;
+            text-align: center;
+            color: #F2F4F8;
+            font-family: 'Montserrat', 'sans-serif';
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        #ascii_div
+        {
+            font-size: 250px;
+        }
+        #ascii_div p
+        {
+            margin: 0;
+        }
+        #divs
+        {
+            display: flex;
+            justify-content: center;
+            box-sizing: border-box;
+        }
+        #divs>div
+        {
+            width: 20vw;
+            background-color: #5F5F5F;
+            font-size: 26px;
+            margin: 0 1vw;
+            border-radius: 6px;
+        }
+        #divs>div>div
+        {
+            border-top-left-radius: 6px;
+            border-top-right-radius: 6px;
+            background-color: #5B60FF;
+            font-size: 14px;
+            padding: 6px;
+            font-weight: 600;
+        }
+        #location
+        {
+            margin: 6px;
+        }
+        #key_type
+        {
+            margin: 0;
+            font-size: 15px;
+            color: #CCC3AC;
+        }
+        #key_req
+        {
+            background-color: #5F5F5F;
+            width: 45%;
+            font-size: 24px;
+            letter-spacing: 1px;
+            margin-left: auto;
+            margin-right: auto;
+            border-radius: 6px;
+        }
+        #key_req p{
+            margin: 14px 0;
+        }
+        .hide
+        {
+            display: none;
+        }
+        .display
+        {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div id="key_req">
+        <p>Press any key to get the JavaScript event keycode</p>
+    </div>
+    <div id="main" class="hide">
+        <div  id="ascii_div">
+            <p id="ascii">10</h1>
+        </div>
+        <div id="divs">
+            <div>
+                <div>event.key</div>
+                <p id="key">h</p>
+            </div>
+            <div>
+                <div>event.location</div>
+                <p id="location">1</p>
+                <p id="key_type">(general key)</p>
+            </div>
+            <div>
+                <div>event.which</div>
+                <p id="ascii2">10</p>
+            </div>
+            <div>
+                <div>event.code</div>
+                <p id="name">3</p>
+            </div>
+        </div>
+    </div>
+    <script>
+        var ascii=document.getElementById("ascii");
+        var ascii2=document.getElementById("ascii2");
+        var keys=document.getElementById("key");
+        var loc=document.getElementById("location");
+        var key_type=document.getElementById("key_type");
+        var nam=document.getElementById("name");
+
+        document.body.addEventListener("keydown",function(e)
+        {
+            document.getElementById("main").className="display";
+            document.getElementById("key_req").className="hide";
+            ascii.innerHTML=e.which;
+            ascii2.innerHTML=e.which;
+            keys.innerHTML=e.key;
+            loc.innerHTML=e.location;
+            if(e.location == 0)
+            {
+                key_type.innerHTML="(General keys)"
+            }
+            else if(e.location == 1)
+            {
+                key_type.innerHTML="(Left-side modifier keys)"
+            }
+            else if(e.location == 2)
+            {
+                key_type.innerHTML="(Right-side modifier keys)"
+            }
+            else if(e.location == 3)
+            {
+                key_type.innerHTML="(Numpad)"
+            }
+            nam.innerHTML=e.code;
+        });
+    </script>
+</body>
+</html>

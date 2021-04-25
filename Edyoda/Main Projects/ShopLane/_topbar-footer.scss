@@ -1,0 +1,273 @@
+@import "./variables";
+html {
+  scroll-behavior: smooth;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+#topbar {
+  @include flexCenter(row, space-around);
+  width: 100%;
+  box-shadow: 2px 4px 2px rgba(17, 16, 16, 0.5);
+  padding: 6px 0;
+  min-height: 8vh;
+  margin-top: -10vh !important;
+  position: fixed;
+  z-index: 50;
+  background-color: #fff;
+  > div:nth-of-type(2) {
+    @include flexCenter(row, space-around);
+    width: 30%;
+  }
+  > div:last-of-type {
+    @include flexCenter(row, space-around);
+    i {
+      padding-top: 8px;
+      font-size: 20px;
+      cursor: pointer;
+      margin-right: 50px;
+    }
+    > div {
+      margin-right: 20px;
+    }
+  }
+  .avatar-png img {
+    width: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    margin: 5px 0px 5px 20px;
+  }
+}
+#logo {
+  h4 {
+    color: $primary-color;
+    letter-spacing: 1px;
+    font-weight: 500;
+    font-size: 30px;
+    cursor: pointer;
+    span {
+      color: black;
+      font-weight: 400;
+    }
+  }
+}
+.topbar-menu {
+  margin-top: 8px;
+  a {
+    font-size: 14px;
+    color: rgb(27, 25, 25);
+    font-weight: 600;
+    letter-spacing: 2px;
+    transition: all 0.2s;
+  }
+  a:hover {
+    color: $primary-color;
+  }
+}
+#cart {
+  position: relative;
+  div {
+    position: absolute;
+    top: 0;
+    right: -25px;
+  }
+  #cartCount {
+    background-color: $primary-color;
+    color: white;
+    padding: 5px 8px;
+    border-radius: 50%;
+    font-weight: 400;
+    font-size: 16px;
+  }
+}
+/* footer */
+footer {
+  width: 100%;
+  background-color: black;
+  padding: 30px;
+  height: 180px;
+  @include flexCenter(row, space-around);
+  flex-wrap: wrap;
+  align-items: flex-start;
+  a,
+  p {
+    text-decoration: none;
+    display: block;
+    color: #b8b8b8;
+    font-size: 12px;
+    margin: 5px 0;
+    letter-spacing: 0px;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  p:hover,
+  a:hover {
+    color: $primary-color;
+  }
+  h4 {
+    color: #dcdcdc;
+    font-size: 16px;
+    margin-bottom: 10px;
+    cursor: pointer;
+  }
+}
+#edLogo {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 100px;
+}
+/* responsive */
+@media screen and (max-width: 1024px) {
+  #topbar {
+    @include flexCenter(row, space-around);
+    > div:nth-of-type(2) {
+      @include flexCenter(column, flex-start);
+      width: 50%;
+    }
+    > div:last-of-type {
+      width: 40%;
+      i {
+        padding-top: 8px;
+        font-size: 20px;
+        cursor: pointer;
+        margin-right: 50px;
+      }
+      div:last-of-type {
+        display: block;
+      }
+    }
+    .avatar-png img {
+      width: 40px;
+      border-radius: 50%;
+      cursor: pointer;
+      margin-left: 20px;
+    }
+  }
+  .topbar-menu {
+    margin-top: 8px;
+    position: absolute;
+    right: 0;
+    height: 89vh;
+    top: 9vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    transform: translateX(100%);
+    transition: 0.5s ease-in;
+    background: #009688;
+    z-index: 100;
+    a {
+      margin-top: 100px;
+      font-size: 14px;
+      color: rgb(27, 25, 25);
+      font-weight: 600;
+      letter-spacing: 2px;
+      transition: all 0.2s;
+    }
+    a:hover {
+      color: white;
+    }
+  }
+  #hamburgerDiv {
+    width: 30px;
+    cursor: pointer;
+  }
+  #hamburgerDiv > div {
+    width: 25px;
+    height: 3px;
+    background-color: rgb(27, 25, 25);
+    margin: 5px;
+    margin-left: 100%;
+    transition: all 0.5s ease;
+  }
+  .lineFirst {
+    transform: rotate(-45deg) translate(-5px, 6px);
+  }
+  .lineLast {
+    transform: rotate(45deg) translate(-5px, -6px);
+  }
+
+  .topMenuActive {
+    transform: translateX(0%);
+  }
+}
+@media screen and (max-width: 600px) {
+  #topbar {
+    @include flexCenter(row, space-around);
+    > div:nth-of-type(2) {
+      @include flexCenter(column, flex-start);
+      width: 50%;
+    }
+    > div:last-of-type {
+      @include flexCenter(row, center);
+      width: 60%;
+      i {
+        padding-top: 8px;
+        font-size: 20px;
+        cursor: pointer;
+        margin-right: 30px;
+      }
+    }
+  }
+  footer {
+    height: auto;
+    > div {
+      width: 50%;
+      margin-bottom: 50px;
+    }
+  }
+}
+
+@media screen and (max-width: 425px) {
+  #logo {
+    h4 {
+      font-size: 24px;
+    }
+  }
+  #topbar {
+    > div:nth-of-type(2) {
+      @include flexCenter(column, flex-start);
+      width: 50%;
+    }
+    > div:last-of-type {
+      width: 50%;
+      i {
+        font-size: 18px;
+        margin-right: 10px;
+      }
+    }
+    .avatar-png img {
+      width: 40px;
+      margin: 2px;
+      margin-left: 20px;
+    }
+  }
+  #hamburgerDiv > div {
+    margin-left: 10%;
+  }
+  #cart {
+    div {
+      top: 0;
+      right: -20px;
+    }
+    #cartCount {
+      padding: 4px 7px;
+      font-size: 13px;
+    }
+  }
+  footer {
+    > div {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+  }
+}

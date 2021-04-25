@@ -1,0 +1,48 @@
+h1
+{
+    text-align: center;
+    font-size: 34px;
+}
+p{
+    font-size: 24px;
+    padding: 5px 10px;
+    
+}
+article
+{
+    margin: 10px;
+    border: 2px solid blue;
+}
+/* first-of-type & last-of-type */
+/* article > p:first-of-type
+{
+    background-color: lightcoral;
+}
+article > p:last-of-type
+{
+    background-color: lightcoral;
+} */
+/* article > p:nth-of-type(3)
+{
+    background-color: lightcoral;
+} */
+/* article > p:nth-last-of-type(2)
+{
+    background-color: lightcoral;
+} */
+ /* div > p:first-child
+{
+    background-color: lightcoral;
+} */
+/* div > p:last-child
+{
+    background-color: lightcoral;
+} */
+/* article > p:nth-child(2)
+{
+    background-color: lightcoral;
+} */
+article > p:nth-last-child(4)
+{
+    background-color: lightcoral;
+}

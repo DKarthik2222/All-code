@@ -1,0 +1,138 @@
+@import "./variables";
+@import "./topbar-footer";
+/* home */
+/* slideshow */
+#slideshow {
+  margin-top: 10vh;
+}
+/* features */
+#features {
+  @include flexCenter(row, space-around);
+  > div {
+    width: 200px;
+    height: 200px;
+    position: relative;
+    @include flexCenter(row, center);
+    h4 {
+      color: rgb(27, 25, 25);
+      position: absolute;
+      top: 80%;
+    }
+    > div {
+      cursor: pointer;
+      padding: 15px;
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      background-color: #009688;
+      animation: animate 3s linear infinite;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      img {
+        width: 40px;
+        height: 38px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+  }
+}
+@keyframes animate {
+  0% {
+    box-shadow: 0 0 0 0 rgba(0, 150, 136, 0.7), 0 0 0 0 rgba(0, 150, 136, 0.7);
+  }
+  40% {
+    box-shadow: 0 0 0 50px rgba(0, 150, 136, 0), 0 0 0 0 rgba(0, 150, 136, 0.7);
+  }
+  80% {
+    box-shadow: 0 0 0 50px rgba(0, 150, 136, 0), 0 0 0 30px rgba(0, 150, 136, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(0, 150, 136, 0), 0 0 0 30px rgba(0, 150, 136, 0);
+  }
+}
+/* cards */
+#home {
+  h2 {
+    font-weight: 500;
+    font-size: 24px;
+    margin-left: 70px;
+    color: rgb(27, 25, 25);
+  }
+}
+#clothing,
+#accessories {
+  padding-top: 100px;
+  border-top: 0.1px solid white;
+  > div:nth-of-type(2) {
+    @include flexCenter(row, center);
+    flex-wrap: wrap;
+    align-items: stretch;
+    padding: 0 4%;
+  }
+}
+.cards {
+  width: 15%;
+  min-width: 200px;
+  height: auto;
+  margin: 30px 10px;
+  cursor: pointer;
+  background-color: #fff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+.cards:hover {
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.788);
+}
+.imgDiv {
+  box-sizing: border-box;
+}
+img {
+  width: 100%;
+}
+.details {
+  padding-left: 10px;
+  margin: 10px auto;
+}
+.name {
+  text-align: left;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  color: rgb(27, 25, 25);
+}
+.brand {
+  margin-top: 10px;
+  text-align: left;
+  font-size: 12px;
+  font-weight: 500;
+  color: rgb(110, 110, 110);
+}
+.price {
+  margin-top: 10px;
+  text-align: left;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: $primary-color;
+}
+/* responsive */
+@media screen and (max-width: 425px) {
+  #features {
+    flex-wrap: wrap;
+    > div {
+      width: 50%;
+      h4 {
+        font-size: 13px;
+        font-weight: 500;
+      }
+      > div {
+        width: 60px;
+        height: 60px;
+      }
+    }
+  }
+}

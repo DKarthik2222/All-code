@@ -1,0 +1,149 @@
+* {
+  padding: 0;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  background-image: -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    from(pink),
+    to(lightblue)
+  );
+  background-image: linear-gradient(to right, pink, lightblue);
+  margin: 0;
+  padding: 8%;
+}
+
+#main-container {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+#login-form {
+  width: 100%;
+  padding: 32px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  border-radius: 8px;
+  background-color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.input-field {
+  width: 100%;
+  padding: 8px 16px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  font-size: 24px;
+  border: none;
+  border-bottom: 1px solid blue;
+  outline: none;
+  /* outline: none; */
+}
+
+.todo-item {
+  width: 100%;
+  background-color: white;
+  border-radius: 8px;
+  padding: 8px 24px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 16px 0;
+}
+
+.horizontal-align {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.todo-message-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.todo-edit-container {
+  display: none;
+}
+
+.todo-item i {
+  cursor: pointer;
+  margin-left: 20px;
+}
+
+#todo-input-wrapper {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+#btn-add-todo {
+  border: none;
+  background-color: transparent;
+  font-size: 50px;
+  cursor: pointer;
+  padding: 0;
+  outline: none;
+  margin-left: 16px;
+}
+
+#btn-update {
+  border: none;
+  background-image: -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    from(pink),
+    to(lightblue)
+  );
+  background-image: linear-gradient(to right, pink, lightblue);
+  cursor: pointer;
+  padding: 8px 16px;
+  outline: none;
+  margin-left: 16px;
+  border-radius: 4px;
+}
+
+#btn-add-todo > i {
+  color: transparent;
+  background-image: -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    from(pink),
+    to(lightblue)
+  );
+  background-image: linear-gradient(to right, pink, lightblue);
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+.edit-todo {
+  font-size: 24px;
+}
+/*# sourceMappingURL=index.css.map */

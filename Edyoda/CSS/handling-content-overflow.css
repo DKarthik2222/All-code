@@ -1,0 +1,13 @@
+#img
+{
+    width: 700px;
+    height: 460px;
+}
+#wrapper
+{
+    width: 800px;
+    height: 560px;
+    overflow: hidden;
+    overflow: scroll;
+    /* overflow: auto; */
+}

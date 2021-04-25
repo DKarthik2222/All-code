@@ -1,0 +1,17 @@
+#article-wrapper
+{
+    padding: 4% 16%;
+}
+article
+{
+    padding-bottom: 4px;
+    font-size: 24px;
+    line-height: 1.4;
+}
+.article-pic
+{
+    width: 300px;
+    height: 300px;
+    float: left;
+    margin-right: 16px;
+}

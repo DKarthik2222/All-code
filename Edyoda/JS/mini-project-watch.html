@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Watch on Amazon</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/89ce51601c.js" crossorigin="anonymous"></script>
+    <style>
+        body
+        {
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+        }
+        header
+        {
+            background-color: rgb(48, 52, 70);
+            text-align: center;
+            padding: 10px;
+        }
+        header img
+        {
+            height: 40px;
+        }
+        aside
+        {
+            display: flex;
+            justify-content: center;
+        }
+        aside img
+        {
+            width: 550px;
+            padding-top: 50px;
+            padding-left: 0;
+            height: 600px;
+            position: relative;
+            left: -150%;
+        }
+        #redimg
+        {
+            display: none;
+        }
+        #blackimg
+        {
+            display: none;
+        }
+        #blueimg
+        {
+            display: none;
+        }
+        #pinkimg
+        {
+            display: none;
+        }
+        #purpleimg
+        {
+            display: block;
+        }
+        #image-wrapper
+        {
+            width: 200px;
+            position: relative;
+            margin-left: 200px;
+        }
+        #time
+        {
+            position: absolute;
+            top: 45%;
+            left: -45%;
+            color: white;
+            font-size: 28px;
+            letter-spacing: 1px;
+            font-weight: 600;
+            display: block;
+        }
+        #heart
+        {
+            position: absolute;
+            top: 45%;
+            left: -30%;
+            color: red;
+            font-size: 50px;
+            animation: dil 0.4s ease-in alternate infinite;
+            display: none;
+        }
+        @keyframes dil
+        {
+            0%
+            {
+                transform: scale(1,1);
+            }
+            100%
+            {
+                transform: scale(1.2,1.2);
+            }
+        }
+        #heartBeat
+        {
+            position: absolute;
+            top: 50%;
+            left: -30%;
+            color: white;
+            font-size: 30px;
+            display: none;
+        }
+        #red
+        {
+            background-color: #ca3d22;
+            width: 40px;
+            height: 30px;
+            border-radius: 3px;
+        }
+        #black
+        {
+            background-color: #23211f;
+            width: 40px;
+            height: 30px;
+            border-radius: 3px;
+        }
+        #blue
+        {
+            background-color: #565681;
+            width: 40px;
+            height: 30px;
+            border-radius: 3px;
+        }
+        #pink
+        {
+            background-color: #e9c7be;
+            width: 40px;
+            height: 30px;
+            border-radius: 3px;
+        }
+        #purple
+        {
+            background-color: #8a5362;
+            width: 40px;
+            height: 30px;
+            border-radius: 3px;
+        }
+        #colors
+        {
+            display: flex;
+        }
+        #colors div
+        {
+            margin-right: 15px;
+        }
+        #content
+        {
+            margin-top: 100px;
+            width: 500px;
+            margin-left: 40px;
+        }
+        h1
+        {
+            font-size: 35px;
+        }
+        button
+        {
+            font-size: 18px;
+            font-family: 'Montserrat', sans-serif;
+            margin-right: 10px;
+            border: none;
+            border-radius: 8px;
+            padding: 5px;
+            outline: none;
+            background-color: rgb(218, 213, 213);
+        }
+        @media screen and (max-width: 600px)
+        {
+            #content
+            {
+                margin: 0;
+                width: 300px;
+                margin-left: 10px;
+            }
+            h1
+            {
+                font-size: 25px;
+                margin-top: 0;
+            }
+            button
+            {
+                margin-bottom: 20px;
+            }
+            header
+            {
+                width: auto;
+                padding: 10px;
+                overflow: hidden;
+                box-sizing: border-box;
+            }
+            aside
+            {
+                display: inline-block;
+            }
+            aside img
+            {
+                width: auto;
+                padding-top: 20px;
+                left: -160%;
+                overflow: hidden;
+            }
+            #time
+            {
+                top: 43%;
+                left: -37%;
+            }
+            #heart
+            {
+                top: 43%;
+                left: -25%;
+            }
+            #heartBeat
+            {
+                left: -25%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="http://pngimg.com/uploads/amazon/amazon_PNG25.png"
+        alt="amazon"/>
+    </header>
+    <aside>
+        <div>
+            <div id="image-wrapper">
+                <img  id="redimg" src="https://i.imgur.com/PTgQlim.png" alt="red"/>
+                <img  id="blackimg" src="https://i.imgur.com/iOeUBV7.png" alt="black"/>
+                <img  id="blueimg" src="https://i.imgur.com/Mplj1YR.png" alt="blue"/>
+                <img  id="pinkimg" src="https://i.imgur.com/Zygu7I3.png" alt="pink"/>
+                <img  id="purpleimg" src="https://i.imgur.com/xSIK4M8.png" alt="purple"/>
+                <p id="time">24:00:00</p>
+                <i id="heart" class="fa fa-heartbeat" aria-hidden="true"></i>
+                <p id="heartBeat">143</p>
+            </div>
+        </div>
+        <div id="content">
+            <h1>FitBit 19 - The Smartest Watch</h1>
+            <p>Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor 
+                Lorem ipsum dolor Lorem ipsum dolor </p>
+            <h3>Select Color</h3>
+            <div id="colors">
+                <div id="red"></div>
+                <div id="black"></div>
+                <div id="blue"></div>
+                <div id="pink"></div>
+                <div id="purple"></div>
+            </div>
+            <p>Features</p>
+            <button id="btnTime">Time</button>
+            <button id="btnHeart">Heart Rate</button>
+        </div>
+    </aside>
+    <script>
+
+        var x = setInterval(function() 
+        {
+            var hours = new Date().getHours();
+            var minutes=new Date().getMinutes();
+            var seconds=new Date().getSeconds();
+            document.getElementById("time").innerHTML = hours+":"+minutes+":"+seconds;
+        }, 1);
+        var red=document.getElementById('red');
+        var black=document.getElementById('black');
+        var blue=document.getElementById('blue');
+        var pink=document.getElementById('pink');
+        var purple=document.getElementById('purple');
+
+        red.addEventListener('click', function()
+        {
+            document.getElementById('blueimg').style.display="none";
+            document.getElementById('blackimg').style.display="none";
+            document.getElementById('pinkimg').style.display="none";
+            document.getElementById('purpleimg').style.display="none";
+            document.getElementById('redimg').style.display="block";
+        })
+        black.addEventListener('click', function()
+        {
+            document.getElementById('blueimg').style.display="none";
+            document.getElementById('blackimg').style.display="block";
+            document.getElementById('pinkimg').style.display="none";
+            document.getElementById('purpleimg').style.display="none";
+            document.getElementById('redimg').style.display="none";
+        })
+        blue.addEventListener('click', function()
+        {
+            document.getElementById('blueimg').style.display="block";
+            document.getElementById('blackimg').style.display="none";
+            document.getElementById('pinkimg').style.display="none";
+            document.getElementById('purpleimg').style.display="none";
+            document.getElementById('redimg').style.display="none";
+        })
+        pink.addEventListener('click', function()
+        {
+            document.getElementById('blueimg').style.display="none";
+            document.getElementById('blackimg').style.display="none";
+            document.getElementById('pinkimg').style.display="block";
+            document.getElementById('purpleimg').style.display="none";
+            document.getElementById('redimg').style.display="none";
+        })
+        purple.addEventListener('click', function()
+        {
+            document.getElementById('blueimg').style.display="none";
+            document.getElementById('blackimg').style.display="none";
+            document.getElementById('pinkimg').style.display="none";
+            document.getElementById('purpleimg').style.display="block";
+            document.getElementById('redimg').style.display="none";
+        })
+        var btnTime=document.getElementById('btnTime');
+        var btnHeart=document.getElementById('btnHeart');
+        btnTime.onclick=function()
+        {
+            document.getElementById('time').style.display="block";
+            document.getElementById('heart').style.display="none";
+            document.getElementById('heartBeat').style.display="none";
+        }
+        btnHeart.onclick=function()
+        {
+            document.getElementById('time').style.display="none";
+            document.getElementById('heart').style.display="block";
+            document.getElementById('heartBeat').style.display="block";
+        }
+    </script>
+</body>
+</html>

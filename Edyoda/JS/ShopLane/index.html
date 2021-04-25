@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <title>ShopLane</title>
+    <link rel="shortcut icon" type="image/x-icon" href="./cartImg.ico" />
+    <link href="./home.css" rel="stylesheet" type="text/css">
+    <link href="./cardData.css" rel="stylesheet" type="text/css">
+    <script src="https://kit.fontawesome.com/89ce51601c.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" integrity="sha512-17EgCFERpgZKcm0j0fEq1YCJuyAWdz9KUtv1EjVuaOz8pDnh/0nZxmU6BBXwaaxqoi9PQXnRWqlcDB027hgv9A==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" integrity="sha512-yHknP1/AwR+yx26cB1y0cjvQUMvEa2PFzt1c9LlS4pRQ5NOTZFWbhBig+X9G9eYW/8m0/4OXNx8pxJ6z57x0dw==" crossorigin="anonymous" />
+    <style>
+        /* TOPBAR */
+        #topbar
+        {
+            width: 100%;
+            box-shadow: 2px 4px 2px rgba(17, 16, 16, 0.5);
+            padding: 15px 0;
+            min-height: 8vh;
+            top: 0;
+            position: fixed;
+            z-index: 50;
+            background-color: #fff;
+        }
+        #topbar, #topbar > div
+        {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #topbar > div:nth-last-of-type(2)
+        {
+            justify-content: space-around;
+        }
+        #topbar > div:nth-last-of-type(1) i
+        {
+            padding-top: 8px;
+            font-size: 22px;
+            cursor: pointer;
+            margin-right: 50px;
+        }
+        #topbar > div:nth-last-of-type(2) a
+        {
+            text-decoration: none;
+            font-size: 14px;
+            color: rgb(27, 25, 25);
+            font-weight: 600;
+            letter-spacing: 2px;
+            transition: all 0.2s;
+        }
+        #topbar > div:nth-last-of-type(2) a:hover
+        {
+            color: #009688;
+        }
+        #topbar > div
+        {
+            width: 33.33%;
+        }
+        #logo h4
+        {
+            color: #009688;
+            letter-spacing: 1px;
+            font-weight: 500;
+            font-size: 30px;
+            letter-spacing: 3px;
+            cursor: pointer;
+        }
+        #logo span
+        {
+            color: black;
+        }
+        .fa-shopping-cart
+        {
+            position: relative;
+        }
+        #cart-count-div
+        {
+            background-color: #009688;
+            font-size: 18px;
+            width: 25px;
+            height: 25px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: 400;
+            color: #fff;
+            border-radius: 50%;
+            position: absolute;
+            top: -5px;
+            right: -25px;
+        }
+        /* FOOTER */
+        footer
+        {
+            display: flex;
+            background-color: rgb(0, 0, 0);
+            justify-content: space-around;
+            padding: 30px 0;
+        }
+        footer h4
+        {
+            color: #dcdcdc;
+            font-size: 16px;
+            margin-bottom: 10px;
+            cursor: pointer;
+        }
+        footer p, footer a
+        {
+            text-decoration: none;
+            display: block;
+            color: #b8b8b8;
+            font-size: 12px;
+            margin: 5px 0;
+            letter-spacing: 0px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        footer p:hover, footer a:hover
+        {
+            color: #009688;
+        }
+        /* slideshow */
+        #slideshow
+        {
+            margin-top: 70px;
+        }
+        /* features */
+        #features {
+            display: flex;
+            justify-content: space-around;
+        }
+        #features > div
+        {
+            width: 200px;
+            height: 200px;
+            position: relative;
+            display: flex;
+            justify-content: center;
+        }
+        #features > div h4
+        {
+            color: rgb(27, 25, 25);
+            position: absolute;
+            top: 80%;
+        }
+        #features > div > div
+        {
+            cursor: pointer;
+            padding: 15px;
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            background-color: #009688;
+            animation: animate 3s linear infinite;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        #features > div > div img
+        {
+            width: 40px;
+            height: 38px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        @keyframes animate
+        {
+            0% {
+                box-shadow: 0 0 0 0 rgba(0, 150, 136, 0.7), 0 0 0 0 rgba(0, 150, 136, 0.7);
+            }
+            40% {
+                box-shadow: 0 0 0 50px rgba(0, 150, 136, 0), 0 0 0 0 rgba(0, 150, 136, 0.7);
+            }
+            80% {
+                box-shadow: 0 0 0 50px rgba(0, 150, 136, 0), 0 0 0 30px rgba(0, 150, 136, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(0, 150, 136, 0), 0 0 0 30px rgba(0, 150, 136, 0);
+            }
+        }
+        /* cart page */
+        #cartPage {
+            margin: 8% 6% 5% 6%;
+            display: none;
+        }
+        #cartPage h1
+        {
+            font-weight: 400;
+            font-size: 40px;
+            letter-spacing: -2px;
+        }
+        #cartContainer
+        {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        #left
+        {
+            width: 52%;
+        }
+        .inCartDiv
+        {
+            display: flex;
+            width: 600px;
+            margin-top: 25px;
+            border-radius: 4px;
+            padding: 15px;
+            cursor: pointer;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+        }
+        .inCartDiv img
+        {
+            width: 80px;
+            height: 100px;
+            border-radius: 4px;
+        }
+        .inCartDiv p
+        {
+            font-size: 16px;
+            margin-top: 8px;
+            color: rgb(27, 25, 25);
+            letter-spacing: 1px;
+        }
+        .inCartDiv div
+        {
+            padding-left: 15px;
+        }
+        #right
+        {
+            width: 45%;
+        }
+        #right div button
+        {
+            font-size: 16px;
+            margin-top: 50px;
+            font-weight: 300;
+            color: #fff;
+            padding: 10px 20px;
+            letter-spacing: 2px;
+            background-color: #009688;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        }
+        #right div h2
+        {
+            letter-spacing: 2px;
+            font-weight: 200;
+            margin: 0;
+        }
+        #right div
+        {
+            width: 450px;
+            margin-top: 50px;
+            margin-left: 50px;
+            border-radius: 4px;
+            padding: 15px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+        }
+        /* order placed */
+        #orderPlaced img
+        {
+            height: 300px;
+            width: 400px;
+        }
+        #orderPlaced p
+        {
+            letter-spacing: 0px;
+        }
+        #orderPlaced
+        {
+            text-align: center;
+            margin-top: 100px;
+            margin-bottom: 60px;
+            text-align: center;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <section id="topbar">
+        <div id="logo"><a href="#"><h4>SHOP<span>LANE</span></h4></a></div>
+        <div>
+            <a id="homeLink" href="#">HOME</a>
+            <a id="clothingLink" href="#clothing">CLOTHINGS</a>
+            <a id="accessoriesLink" href="#accessories">ACCESSORIES</a>
+        </div>
+        <div>
+            <i class="fas fa-search"></i>
+            <i id="cart" class="fa fa-shopping-cart">
+                <div id="cart-count-div"><span id="cartCount">0</span></div>
+            </i>
+            <i style="font-size: 30px;" class="fa fa-user-circle-o"></i>
+        </div>
+    </section>
+    <main id="home">
+        <section id="slideshow">
+            <img src="./img1.png" alt="img1"/>
+            <img src="./img2.png" alt="img1"/>
+            <img src="./img3.png" alt="img1"/>
+            <img src="./img4.png" alt="img1"/>
+        </section>
+        <section id="features">
+            <div>
+                <div>
+                    <img src="./icon1.png" alt="1">
+                </div>
+                <h4>Free Delivery</h4>
+            </div>
+            <div>
+                <div>
+                    <img src="./icon2.png" alt="1">
+                </div>
+                <h4>Money Back Gurantee</h4>
+            </div>
+            <div>
+                <div>
+                    <img src="./icon3.png" alt="1">
+                </div>
+                <h4>Always Support</h4>
+            </div>
+            <div>
+                <div>
+                    <img src="./icon4.png" alt="1">
+                </div>
+                <h4>Secure Payment</h4>
+            </div>
+        </section>
+        <h2>Clothing for Men and Women</h2>
+        <div id="clothing">
+    
+        </div>
+        <h2>Accessories for Men and Women</h2>
+        <div id="accessories">
+    
+        </div>
+    </main>
+    <article id="cardInfo">
+        <div id="main_img">
+            <img id="preview" src="" alt="1"/>
+        </div>
+        <div class="content">
+            <h1 id="name"></h1>
+            <p id="brand"></p>
+            <p>Price: Rs <span id="price"></span></p>
+            <p>Description</p>
+            <p id="description"></p>
+            <p>Product Preview</p>
+            <div class="images">
+                <img id="photo0" class="photos active" src="#" alt="1"/>
+                <img id="photo1" class="photos" src="#" alt="1"/>
+                <img id="photo2" class="photos" src="#" alt="1"/>
+                <img id="photo3" class="photos" src="#" alt="1"/>
+                <img id="photo4" class="photos" src="#" alt="1"/>
+            </div>
+            <div class="btn">
+                <button id="add-to-cart">Add to Cart</button>
+            </div>
+        </div>
+    </article>
+    <section id="cartPage">
+        <h1>Checkout</h1>
+        <p>Total Items: <span id="totalItems"></span></p>
+        <div id="cartContainer">
+            <div id="left">
+
+            </div>
+            <div id="right">
+                <div>
+                    <h2>Total Amount</h2>
+                    <p>Total Amount: Rs <span id="finalPrice"></span></p>
+                    <button id="placeOrder">Place Order</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="orderPlaced">
+        <img src="./img_confirm.png" alt="confirmImage"/>
+        <h3>Order Placed Successfully!!</h3>
+        <p>We have sent you an email with the order details</p>
+    </section>
+    <footer>
+        <div>
+            <h4>ONLINE STORE</h4>
+            <a href="#">MEN CLOTHING</a>
+            <a href="#">WOMEN CLOTHING</a>
+            <a href="#">MEN ACCESSORIES</a>
+            <a href="#">WOMEN ACCESSORIES</a>
+        </div>
+        <div>
+            <h4>HELPFUL LINKS</h4>
+            <a href="#">HOME</a>
+            <a href="#">ABOUT</a>
+            <a href="#">CONTACT</a>
+        </div>
+        <div>
+            <h4>PARTNERS</h4>
+            <a href="#">ZARA</a>
+            <a href="#">PANTALOONS</a>
+            <a href="#">LEVIS</a>
+            <a href="#">UCB</a>
+            <a href="#">+ MANY MORE</a>
+        </div>
+        <div>
+            <h4>ADDRESS</h4>
+            <p>BUILDING 101</p>
+            <p>CENTRAL AVENUE</p>
+            <p>LA-902722</p>
+            <p>UNITED STATES</p>
+        </div>
+    </footer>
+    <script src="./home.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js" integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg==" crossorigin="anonymous"></script>
+    <script>
+        $('#slideshow').slick({
+            dots: true,
+            infinite: true,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            autoplay: true,
+            autoplaySpeed: 2000,
+            arrows: false
+        });
+    </script>
+</body>
+</html>

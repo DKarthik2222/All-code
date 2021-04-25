@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classes</title>
+    <script>
+        // function Person(name, birthYear)
+        // {
+        //     this.name=name;
+        //     this.yearOfBirth=birthYear;
+
+        //     this.getDetails=function(){
+        //         return "Name: "+this.name+' and Age: '+(2020-this.yearOfBirth);
+        //     }
+        // }
+
+        class Person
+        {
+            constructor(name, birthYear)
+            {
+                this.name=name;
+                this.yearOfBirth=birthYear;
+            }
+            getDetails=()=>{
+                return `Name: ${this.name} and Age: ${2020-this.yearOfBirth}`;
+            }
+        }
+        class Pilot extends Person
+        {
+            constructor(name, birthYear, exp, type, license)
+            {
+                super(name, birthYear)
+                this.experience=exp;
+                this.type=type;
+                this.license=license;
+            }
+            getData=()=>{
+               return (`${this.getDetails()} Experience ${this.experience} and Type: ${this.type}`)
+            }
+        }
+        
+        const jhon=new Pilot('jhon', 1998, 28, 'private', 'TC1234');
+        console.log(jhon.getData())
+        console.log(jhon)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

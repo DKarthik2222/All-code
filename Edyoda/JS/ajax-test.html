@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX Update/Delete HTML Elements</title>
+    <style>
+        body
+        {
+            margin: 0;
+            text-align: center;
+            background-color: lightblue;
+            font-size: 24px;
+        }
+        section
+        {
+            position: relative;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 600px;
+            height: auto;
+        }
+        li
+        {
+            list-style-type: none;
+            margin: 15px;
+            padding: 10px;
+            background-color: white;
+            border-radius: 8px;
+        }
+        button
+        {
+            margin-top: 24px;
+            font-size: 24px;
+            border-radius: 4px;
+        }
+        input
+        {
+            margin-top: 24px;
+            font-size: 24px;
+            outline: none;
+            border: none;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <section>
+            <input id="todo-input" type="text" placeholder="Enter tasks here..."/><br>
+            <button id="add-item">Add List Item</button>
+            <button id="update-item">Update First Item</button>
+            <button id="remove-item">Remove First Item</button>
+            <ul id="todo-list">
+                <li id="item1">List Item 1</li>
+                <li id="item2">List Item 2</li>
+            </ul>
+        </section>
+    </header>
+    <form action="" id="input4radio"></form>
+    <script>
+        var data = {
+    "id" : 21,
+    "question": "What is 2 + 8?",
+    "alternatives": {
+        "alt1": 2,
+        "alt2": 8,
+        "alt3": 10,
+        "alt4": 28
+    },
+    "answer" : "alt3"
+}
+
+function onLoad() {
+    var form = document.getElementById('input4radio');
+    for (alt in data.alternatives) {
+        var newRadio = document.createElement('input'); 
+        newRadio.type = 'radio';
+        newRadio.value = data.alternatives[alt];
+        form.appendChild(newRadio); 
+        form.appendChild(document.createElement('br'));
+    }
+
+}
+
+window.onload = onLoad;
+        // var uinput=document.getElementById('todo-input')
+        // var list=document.getElementById('todo-list');
+        // var btnAdd=document.getElementById('add-item');
+        // // var btnUpdate=document.getElementById('update-item')
+        // // var btnRemove=document.getElementById('remove-item')
+        // var currentInputValue='';
+        // uinput.addEventListener('input', function(e)
+        // {
+        //     currentInputValue=e.target.value;
+        // })
+
+        // uinput.addEventListener('keyup',function(e){
+        //     if(e.keyCode==13)
+        //     {
+        //         createTODOItemAtBackend();
+        //     }
+        // })
+        // btnAdd.addEventListener('click', createTODOItemAtBackend);
+
+        // function createNewNode()
+        // {
+        //     var newListElement=document.createElement('li');
+        //     var textNode = document.createTextNode(currentInputValue)
+        //     newListElement.appendChild(textNode);
+        //     newListElement.id='item'+(list.childElementCount+1);
+
+        //     return newListElement;
+        // }
+
+        // //AJAX
+
+        // function createTODODynamically(id, title){
+        //     var newListElement=document.createElement('li');
+        //     var textNode = document.createTextNode(title)
+        //     newListElement.appendChild(textNode);
+        //     newListElement.id=id;
+
+        //     return newListElement;
+        // }
+
+        // function getTODOListFromBackend(){
+        //     var http=new XMLHttpRequest();
+        //     http.onreadystatechange = function(){
+        //         if(this.readyState===4){
+        //             if(this.status===200){
+        //                 console.log('Response Recieved')
+        //                 // console.log(this.responseURL)
+        //                 // console.log(JSON.parse(this.responseText))
+        //                 var response=JSON.parse(this.responseText)
+        //                 for(var i=0;i<response.length;i++)
+        //                 {
+        //                     // console.log(response[i].id, response[i].title)
+        //                     list.appendChild(createTODODynamically(response[i].id,
+        //                     response[i].question))
+        //                 }
+        //             }
+        //             else{
+        //                 console.log('Call Failed')
+        //             }
+        //         }
+        //     }
+        //     http.open('GET', 'https://2bb26b43-fe66-452b-bc02-8b1ea458e3fb.mock.pstmn.io/quiz', true);
+        //     http.send(); //triggers the call
+        // }
+        // getTODOListFromBackend()
+
+        // function createTODOItemAtBackend(){
+        //     var http=new XMLHttpRequest();
+        //     http.open('POST', 'https://2bb26b43-fe66-452b-bc02-8b1ea458e3fb.mock.pstmn.io/quiz', true)
+        //     http.onreadystatechange = function(){
+        //         if(this.readyState===4){
+        //             if(this.status===201){
+        //                 var response=JSON.parse(this.responseText);
+        //                 list.appendChild(createTODODynamically(response.id, currentInputValue));
+        //                 console.log('Add Item to the list')
+        //             }
+        //             else{
+        //                 console.log('Call Failed')
+        //             }
+        //         }
+        //     }
+        //     var obj=JSON.stringify(
+        //         {
+        //             "UserId": 1,
+        //             "question": currentInputValue,
+        //             "Completed": false
+        //         });
+        //         http.send(obj);
+        // }
+
+    </script>
+</body>
+</html>

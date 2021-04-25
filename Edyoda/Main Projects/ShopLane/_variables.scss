@@ -1,0 +1,7 @@
+@mixin flexCenter($direction, $justify) {
+  display: flex;
+  justify-content: $justify;
+  align-items: center;
+  flex-direction: $direction;
+}
+$primary-color: #009688;

@@ -1,0 +1,21 @@
+#div1
+{
+    width: 100%;
+    height: 100px;
+    margin: 10px;
+    background: linear-gradient(to right, #f869d5, #5950de);
+}
+#div2
+{
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+    background: linear-gradient(135deg, #f869d5, #5950de);
+}
+#div3
+{
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+    background: radial-gradient(circle at right bottom, coral, blue)
+}

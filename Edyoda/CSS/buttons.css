@@ -1,0 +1,59 @@
+#btn-fb
+{
+    background-color: #3b5993;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    cursor: pointer;
+}
+#btn-fb:hover
+{
+    background-color: blue;
+    color: white;
+}
+#btn-gl
+{
+    background-color: #dd4b3d;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    cursor: pointer;
+}
+#btn-gl:hover
+{
+    background-color: blue;
+    color: white;
+}
+.label
+{
+    padding-left: 8px;
+}
+#btn-git
+{
+    background-color: #000000;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    cursor: pointer;
+}
+#btn-git:hover
+{
+    background-color: blue;
+    color: white;
+}
+#btn-disabled
+{
+    background-color: lightblue;
+    padding: 8px 16px;
+    border: none;
+    outline: none;
+    border-radius: 8px;
+    cursor: not-allowed;
+    opacity: 0.6;
+}

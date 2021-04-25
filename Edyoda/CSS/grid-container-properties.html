@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Container Properties</title>
+    <style>
+        body
+        {
+            margin: 0;
+            background-color: black;
+        }
+        h1{
+            color: white;
+            text-align: center;
+            font-size: 48px;
+        }
+        #grid-container
+        {
+            display: grid;
+            grid-template-columns: auto auto auto auto auto;
+            /* grid-gap: 20px; */
+            column-gap: 32px;
+            row-gap: 48px;
+            /* justify-content: left; */
+        }
+        .poster
+        {
+            width: 100%;
+            max-width: 400px;
+            height: 100%;
+            box-sizing: border-box;
+        }
+        .poster:hover
+        {
+            animation: zoom 1s forwards;
+        }
+        @keyframes zoom
+        {
+            0%
+            {
+                transform: scale(1);
+                box-shadow: 0 2px 5px #cccccc;
+            }
+            100%
+            {
+                transform: scale(1.1);
+            }
+        }
+        @media (max-width: 900px)
+        {
+            #grid-container
+            {
+                grid-template-columns: auto auto auto;
+            }
+        }
+        @media (max-width: 400px)
+        {
+            #grid-container
+            {
+                grid-template-columns: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>
+        MOVIES
+    </h1>
+    <div id="grid-container">
+        <div>
+            <img class="poster" src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/movie-poster-template-design-21a1c803fe4ff4b858de24f5c91ec57f_screen.jpg?ts=1574144362"
+            alt="after" />
+        </div>
+        <div>
+            <img class="poster" src="https://www.bestmovieposters.co.uk/wp-content/uploads/2019/01/inCmCRl_.jpeg"
+            alt="venom" />
+        </div>
+        <div>
+            <img class="poster" src="https://m.media-amazon.com/images/M/MV5BNjRjZGVjZDQtZWI5YS00YjllLWJlNDEtZjAzMmRhODcyZDIyXkEyXkFqcGdeQXVyODIwMDI1NjM@._V1_QL50_SY1000_CR0,0,705,1000_AL_.jpg"
+            alt="bahubali" />
+        </div>
+        <div>
+            <img class="poster" src="https://cdn.collider.com/wp-content/uploads/2017/03/spider-man-homecoming-poster-395x600.jpeg"
+            alt="spider-man" />
+        </div>
+        <div>
+            <img class="poster" src="https://img.moviepostershop.com/replicas-movie-poster-2019-1010778791.jpg"
+            alt="replicas" />
+        </div>
+        <div>
+            <img class="poster" src="https://blackwhiteandredposters.files.wordpress.com/2010/11/gamer-movie-poster.jpg?w=460&h=681"
+            alt="gamer" />
+        </div>
+        <div>
+            <img class="poster" src="http://gdj.graphicdesignjunction.com/wp-content/uploads/2011/12/mission-impossible-ghost-protocol-movie-poster.jpg"
+            alt="ghost-protocol" />
+        </div>
+        <div>
+            <img class="poster" src="https://img.moviepostershop.com/punished-movie-poster-2011-1010708248.jpg"
+            alt="punished" />
+        </div>
+        <div>
+            <img class="poster" src="https://movieposters2.com/images/1376442-b.jpg"
+            alt="martian" />
+        </div>
+        <div>
+            <img class="poster" src="https://cdn.collider.com/wp-content/uploads/2017/10/star-wars-the-last-jedi-new-poster-405x600.jpg"
+            alt="star-wars" />
+        </div>
+    </div>
+</body>
+</html>

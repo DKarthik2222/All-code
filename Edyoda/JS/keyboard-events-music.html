@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Pad</title>
+    <style>
+        body
+        {
+            margin: 0;
+            background-image: url('https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=60');
+            background-size: 100vw;
+            color: white;
+        }
+        section
+        {
+            display: grid;
+            grid-template-columns: auto auto auto auto auto auto auto auto auto;
+            justify-content: center;
+            grid-gap: 24px;
+            position: relative;
+            top: 700px;
+        }
+        section div
+        {
+            text-align: center;
+            width: 100px;
+            border: 2px solid white;
+        }
+        p
+        {
+            color: rgb(207, 152, 49);
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <div>
+            <h1>A</h1>
+            <p>CLAP</p>
+        </div>
+        <div>
+            <h1>S</h1>
+            <p>HIHAT</p>
+        </div>
+        <div>
+            <h1>D</h1>
+            <p>KICK</p>
+        </div>
+        <div>
+            <h1>F</h1>
+            <p>OPENHAT</p>
+        </div>
+        <div>
+            <h1>G</h1>
+            <p>BOOM</p>
+        </div>
+        <div>
+            <h1>H</h1>
+            <p>RIDE</p>
+        </div>
+        <div>
+            <h1>J</h1>
+            <p>SNARE</p>
+        </div>
+        <div>
+            <h1>K</h1>
+            <p>TOM</p>
+        </div>
+        <div>
+            <h1>L</h1>
+            <p>TINK</p>
+        </div>
+    </section>
+    <audio id="clap">
+        <source src="/music/clap.wav">
+    </audio>
+    <audio id="hihat">
+        <source src="/music/hihat.wav">
+    </audio>
+    <audio id="kick">
+        <source src="/music/kick.wav">
+    </audio>
+    <audio id="openhat">
+        <source src="/music/openhat.wav">
+    </audio>
+    <audio id="boom">
+        <source src="/music/boom.wav">
+    </audio>
+    <audio id="ride">
+        <source src="/music/ride.wav">
+    </audio>
+    <audio id="snare">
+        <source src="/music/snare.wav">
+    </audio>
+    <audio id="tom">
+        <source src="/music/tom.wav">
+    </audio>
+    <audio id="tink">
+        <source src="/music/tink.wav">
+    </audio>
+    <script src="/keyboard-events-music.js"></script>
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html, body { 
+            height: 100%;
+            }
+        body { 
+            position: relative; 
+            }
+
+        header { 
+            height: 20%; 
+            background-color: #def; 
+            }
+        article { 
+            height: 80%; 
+            background-color: #fde; 
+            }
+        .overlay { 
+            background-color: rgba(32, 32, 32, 0.5); 
+            position: absolute; 
+            left: 0; 
+            right: 0; 
+            top: 0; 
+            bottom: 0; 
+            display: none; 
+            }
+        h1 { 
+            font-size: 150%; 
+            }
+        .overlay > table { 
+            width: 100%; 
+            height: 100%; 
+            }
+        .overlay > table td { 
+            vertical-align: center; 
+            text-align: center; 
+            }
+        .overlay > table td div { 
+            padding: 20px; 
+            background-color: #fff; 
+            display: inline-block; 
+            }
+        input[type=checkbox] {
+            /* display: none; */
+            }
+        #header:checked + header { 
+            display: none; 
+            }
+        #header:checked ~ article { 
+            height: 100%; 
+            }
+        article label[for=header] { 
+            display: none;
+            }
+        #header:checked ~ article label[for=header] {
+            display: inline-block; 
+            }
+        #overlay:checked + .overlay { 
+            display: block; 
+            }
+        p { 
+            text-align: center; 
+            padding: 10px; 
+            }
+
+        label { 
+            display: inline-block; 
+            padding: 2px 4px; 
+            border: 1px solid #333; 
+            background-color: rgba(32, 32, 32, 0.9); 
+            border-radius: 6px; 
+            font-size: 80%; 
+            font-weight: bold; 
+            color: #fff; 
+            }
+
+        #all:checked ~ header { 
+            background-color: #fde; 
+            }
+        #all:checked ~ article {
+            background-color: #def; 
+            }
+    </style>
+</head>
+<body>
+    <input type="checkbox" id="all" />
+    <input type="checkbox" id="header" />
+    <header>Logo<h1>Title</h1><label for="header">Hide header</label></header>
+<article
+    <p><label for="overlay">Show lightbox</label></p>
+    <p><label for="all">Toggle background colors</label></p>
+    <p><label for="header">Show header</label></p>
+</article>
+<input type="checkbox" id="overlay" />
+<div class="overlay">
+    <table>
+        <tr>
+            <td>
+                <div>
+                    <label for="overlay">Click to close this lightbox</label>
+                </div>
+            </td>
+        </tr>
+    </table>
+</div>
+
+
+</body>
+</html>

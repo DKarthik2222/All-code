@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find() & findIndex()</title>
+    <script>
+        const numArr=[-1,-2,-3,-4,1,2,3,4,20]
+        const result=numArr.find(item=>{
+            return (item%2==0 && item>=0)
+        })
+        const result2=numArr.findIndex(item=>{
+            return (item%5==0 && item>=0)
+        })
+        console.log('Result is => ',result,' ',result2)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

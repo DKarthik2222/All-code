@@ -1,0 +1,52 @@
+body
+{
+    margin: 0;
+}
+.item
+{
+    background-color: lightcoral;
+    margin-right: 16px;
+    margin-bottom: 16px;
+    padding: 32px;
+    font-size: 24px;
+    text-align: center;
+}
+/* for rows */
+#container
+{
+    width: 100vw;
+    height: 700px;
+    background-color: lightblue;
+    padding: 32px;
+    display: flex;
+    /* row or row-reverse */
+    flex-direction: row;
+    /* for complete row in centre with no wrap */
+    /* justify-content: center;
+    align-items: center;/ flext-start/flex-end/stretch */
+    flex-wrap: wrap;
+    /* for complete row in centre with no wrap */
+    /* justify-content: center;
+    align-content: center; */
+    align-content: space-around;
+}
+/* for columns */
+#container2
+{
+    width: 100vw;
+    height: 700px;
+    max-width: 100%;
+    background-color: lightblue;
+    padding: 32px;
+    display: flex;
+    /* column or column-reverse */
+    flex-direction: column;
+    /* for complete row in centre with no wrap */
+    /* justify-content: center;
+    align-items: center;/* flext-start/flex-end/stretch */
+    flex-wrap: wrap;
+    /* for complete row in centre with no wrap */
+    /* justify-content: center;
+    align-content: center; */
+    align-content: flex-end;
+}

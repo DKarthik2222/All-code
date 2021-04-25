@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create/Add HTML Elements</title>
+    <style>
+        body
+        {
+            margin: 0;
+            text-align: center;
+            background-color: lightblue;
+            font-size: 24px;
+        }
+        section
+        {
+            position: relative;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 400px;
+            height: auto;
+        }
+        li
+        {
+            list-style-type: none;
+            margin: 15px;
+            padding: 10px;
+            background-color: white;
+            border-radius: 8px;
+        }
+        button
+        {
+            margin-top: 24px;
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <section>
+            <button id="add-item">Add List Item</button>
+            <ul id="todo-list">
+                <li id="item1">List Item 1</li>
+                <li>List Item 2</li>
+            </ul>
+        </section>
+    </header>
+    <script src="/add/create-html-elemts.js"></script>
+</body>
+</html>

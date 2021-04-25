@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-storage.js"></script>
+    <title>Login</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <main>
+      <div id="div1">
+        <img class="icons" src="./login.png" alt="login" />
+        <form id="input-wrapper">
+          <input
+            id="email"
+            type="email"
+            placeholder="E-mail"
+            name="login"
+            required
+          />
+          <input
+            id="password"
+            type="password"
+            placeholder="Password"
+            name="login"
+            required
+          />
+          <button id="login" type="submit" name="button">Login</button>
+          <button id="signupShift" type="button" name="button">Signup</button>
+        </form>
+      </div>
+      <div id="div2">
+        <img class="icons" src="./register.png" alt="login" />
+        <form id="input-wrapper2">
+          <input
+            id="uName"
+            type="text"
+            placeholder="User Name"
+            name="login"
+            required
+          />
+          <input
+            id="emailReg"
+            type="email"
+            placeholder="E-mail"
+            name="login"
+            required
+          />
+          <input
+            id="createPassword"
+            type="password"
+            placeholder="Password"
+            name="login"
+            required
+          />
+          <input
+            id="confPassword"
+            type="password"
+            placeholder="Confirm Password"
+            name="login"
+            required
+          />
+          <input type="file" id="file" required />
+          <div id="progressBar">
+            <div id="progressBarFull"><p id="percentage">0%</p></div>
+          </div>
+          <button id="Register" type="submit" name="login">Register</button>
+          <button id="loginShift" type="button" name="button">Login</button>
+        </form>
+      </div>
+    </main>
+    <script src="./index.js"></script>
+  </body>
+</html>

@@ -1,0 +1,32 @@
+body
+{
+    background-color: palegoldenrod;
+    color: brown;
+    text-align: center;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+main
+{
+    width: 65%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 70px;
+    margin-bottom: 70px;
+}
+header, footer
+{
+    background-color: brown;
+    color: white;
+    padding: 20px;
+}
+a
+{
+    text-decoration: none;
+    color: white;
+}
+header h3, footer h3
+{
+    display: inline;
+    margin: 10px;
+}

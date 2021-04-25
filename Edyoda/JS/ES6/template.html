@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Template Strings</title>
+    <script>
+        const fn='Karthik';
+        const ln='Dulam';
+        function getFullName(fn,ln)
+        {
+            // return fn+' '+ln;
+            return `${fn} ${ln}`
+        }
+        const mGreetings=`Hello ${getFullName(fn,ln)}`;
+        document.writeln(mGreetings)
+        let red=200
+        let green=155
+        let blue=100
+        // const rgbExp='rgb('+red+', '+green+', '+blue+')'
+        const rgbExp=`rgb(${red}, ${green}, ${blue})`
+        document.writeln(rgbExp)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
